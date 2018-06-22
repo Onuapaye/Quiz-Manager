@@ -1,0 +1,5 @@
+package fr.fortress.quizmanager.login.services;
+
+public class LoginService {
+
+}

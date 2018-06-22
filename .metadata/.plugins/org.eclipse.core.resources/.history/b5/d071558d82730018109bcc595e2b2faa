@@ -1,0 +1,71 @@
+/**
+ * 
+ */
+package fr.fortress.quizmanager.daos;
+
+import java.util.List;
+import java.util.Map.Entry;
+
+import javax.inject.Inject;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
+
+import fr.fortress.quizmanager.model.MCQChoice;
+import fr.fortress.quizmanager.services.WhereClauseBuilder;
+
+/**
+ * @author Mr Kasapa
+ *
+ */
+public abstract class GenericORM_DAO_Abstract<T> {
+
+	//Inject the session factory to help call the session methods
+		@Inject
+		SessionFactory sf;
+		
+		public final void createRecord(T entity) {
+			if (!beforeCreate(entity)) {
+				return;
+			}
+			final Session session = sf.openSession();
+			session.save(entity);
+		}
+
+		public final void updateRecord(T entity) {
+			final Session session = sf.openSession();
+			session.update(entity);
+		}
+
+		public final void deleteRecord(T entity) {
+			final Session session = sf.openSession();
+			session.delete(entity);
+		}
+
+		public final void closeSession() {
+			if(sf.isOpen()) {
+				sf.close();
+			}
+		}
+		public List<T> searchRecord(T entity) {
+			
+			final Session session = sf.openSession();
+			final WhereClauseBuilder<T> wcb = getWhereClauseBuilder(entity);
+			final Query searchQuery = session.createQuery(wcb.getQueryString());
+			
+			for (final Entry<String, Object> parameterEntry : wcb.getParameters().entrySet()) {
+				searchQuery.setParameter(parameterEntry.getKey(), parameterEntry.getValue());
+			}
+
+			return searchQuery.list();
+		}
+
+		protected abstract WhereClauseBuilder getWhereClauseBuilder(T entity);
+
+		public boolean beforeCreate(T entity) {
+			return entity != null;
+		}
+		
+		
+}

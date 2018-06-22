@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+<typeInfo handle="=java-web-app/C:\/Users\/Mr Kasapa\/.m2\/repository\/javax\/javaee-web-api\/6.0\/javaee-web-api-6.0.jar&lt;javax.servlet(Filter.class[Filter" modifiers="1537" timestamp="1528675930397"/>
+<typeInfo handle="=java-web-app/C:\/Program Files\/Java\/jdk1.8.0_51\/jre\/lib\/rt.jar&lt;java.util.logging(Filter.class[Filter" modifiers="1537" timestamp="1438513054054"/>
+<typeInfo handle="=fortress-quiz-manager/C:\/Users\/Mr Kasapa\/.m2\/repository\/org\/springframework\/spring-jdbc\/5.0.4.RELEASE\/spring-jdbc-5.0.4.RELEASE.jar&lt;org.springframework.jdbc.datasource(DriverManagerDataSource.class[DriverManagerDataSource" modifiers="33" timestamp="1520881366321"/>
+<typeInfo handle="=fortress-quizmanager-web/src\/main\/java&lt;fr.fortress.quizmanager.web.services{SpringServlet.java[SpringServlet" modifiers="1" timestamp="1529508014080"/>
+</typeInfoHistroy>

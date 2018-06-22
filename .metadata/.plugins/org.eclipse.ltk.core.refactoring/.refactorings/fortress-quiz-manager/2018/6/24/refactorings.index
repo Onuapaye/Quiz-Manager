@@ -1,0 +1,6 @@
+1529166361929	Copy compilation unit
+1529166468260	Delete element
+1529245329807	Rename field 'studentName'
+1529255899190	Rename type 'ExamTitle'
+1529256882703	Rename field 'studentId'
+1529256913090	Rename local variable 'studentId'

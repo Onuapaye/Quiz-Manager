@@ -1,0 +1,15 @@
+package fr.fortress.quizmanager.model;
+
+public class ExamTitle {
+
+	String examTitleName;
+
+	public String getExamTitleName() {
+		return examTitleName;
+	}
+
+	public void setExamTitleName(String examTitleName) {
+		this.examTitleName = examTitleName;
+	}
+	
+}

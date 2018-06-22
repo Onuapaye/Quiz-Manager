@@ -1,0 +1,98 @@
+package fr.fortress.quizmanager.daos;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.springframework.beans.factory.annotation.Autowired;
+
+
+import fr.fortress.quizmanager.model.ApplicationUser;
+import fr.fortress.quizmanager.services.WhereClauseBuilder;
+
+public class ApplicationUserDAO extends GenericORM_DAO_Abstract<ApplicationUser> {
+
+	private static final Logger LOGGER = LogManager.getLogger(ApplicationUserDAO.class);
+	
+	@Autowired
+	private SessionFactory sessionFactory;
+
+	/*
+	 * public SessionFactory getSessionFactory() { return sessionFactory; }
+	 */
+
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
+	public void createApplicationUser(ApplicationUser applicationUser) {
+
+		Session sessions = sessionFactory.openSession();
+		Transaction transactions = sessions.beginTransaction();
+		if (applicationUser != null) {
+			try {
+				
+				this.createRecord(applicationUser);
+				
+				transactions.commit();
+				this.closeSession();
+				
+			} catch (Exception e) {
+				transactions.rollback();
+				this.closeSession();
+
+				LOGGER.error("Error creating application user record with error message: " + e.getMessage().toString());
+			}
+		}
+	}
+
+	public void updateApplicationUser(ApplicationUser applicationUser) {
+		Session sessions = sessionFactory.openSession();
+		Transaction transactions = sessions.beginTransaction();
+		if (applicationUser != null) {
+			try {
+				
+				this.updateRecord(applicationUser);
+				
+				transactions.commit();
+				this.closeSession();
+				
+			} catch (Exception e) {
+				transactions.rollback();
+				this.closeSession();
+
+				LOGGER.error("Error updating application user record with error message: " + e.getMessage().toString());
+			}
+		}
+	}
+	
+	public void deleteApplicationUser(ApplicationUser applicationUser) {
+		Session sessions = sessionFactory.openSession();
+		Transaction transactions = sessions.beginTransaction();
+		if (applicationUser != null) {
+			try {
+				
+				this.deleteRecord(applicationUser);
+				
+				transactions.commit();
+				this.closeSession();
+				
+			} catch (Exception e) {
+				transactions.rollback();
+				this.closeSession();
+
+				// TODO: log with log4j2
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	
+	@Override
+	protected WhereClauseBuilder getWhereClauseBuilder(ApplicationUser entity) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

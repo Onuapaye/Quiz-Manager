@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Yahoo!! From JSP</title>
+</head>
+<body>
+	<h1>My First JSP</h1>
+	<!--  <p>Name: ${name} and Password: ${password}</p>-->
+	<div><font color="red">${errorMessage}</font></div>
+	<div>
+		<form action="login.do" method="post">
+			Username <input type="text" name="username" /> Password <input
+				type="password" name="user-password" /> <input type="submit"
+				value="Login">
+		</form>
+	</div>
+	
+	<!-- JavaScript plugins -->
+<script src="webjars/jquery/3.3.1-1/jquery.min.js"></script>
+<script src="webjars/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+</body>
+</html>

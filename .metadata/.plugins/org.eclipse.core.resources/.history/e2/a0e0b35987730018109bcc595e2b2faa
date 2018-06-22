@@ -1,0 +1,68 @@
+package fr.fortress.quizmanager.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name ="tblMCQAnswer", schema = "fortressqmschema")
+public class MCQAnswer {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "mcqAnswerId")
+	private int mcqAnswerId;
+	
+	@ManyToOne
+	@JoinColumn(name="mcqchoiceId", nullable = false)
+	private MCQChoice mcqChoice;
+	
+	@ManyToOne
+	@JoinColumn(name="studentEmail_Id", nullable = false)
+	private Student student;
+	
+	@ManyToOne
+	@JoinColumn(name="examId", nullable = false)
+	private Exam exam;
+	
+	
+	
+	public int getMcqAnswerId() {
+		return mcqAnswerId;
+	}
+
+	public void setMcqAnswerId(int mcqAnswerId) {
+		this.mcqAnswerId = mcqAnswerId;
+	}
+
+	public MCQChoice getMcqChoice() {
+		return mcqChoice;
+	}
+	
+	public void setMcqChoice(MCQChoice mcqChoice) {
+		this.mcqChoice = mcqChoice;
+	}
+	
+	public Student getStudent() {
+		return student;
+	}
+	
+	public void setStudent(Student student) {
+		this.student = student;
+	}
+	
+	public Exam getExam() {
+		return exam;
+	}
+	
+	public void setExam(Exam exam) {
+		this.exam = exam;
+	}
+	
+	
+}

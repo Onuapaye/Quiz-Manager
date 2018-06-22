@@ -1,0 +1,148 @@
+package fr.fortress.quizmanager.daos;
+
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.inject.Inject;
+import javax.inject.Named;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import fr.fortress.quizmanager.model.ApplicationUser;
+import fr.fortress.quizmanager.services.WhereClauseBuilder;
+
+@Repository
+public class ApplicationUserDAO extends GenericORM_DAO_Abstract<ApplicationUser> {
+
+	private static final Logger LOGGER = LogManager.getLogger(ApplicationUserDAO.class);
+	
+	@Autowired
+	private SessionFactory sessionFactory;
+
+	/*
+	 * public SessionFactory getSessionFactory() { return sessionFactory; }
+	 */
+
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
+	public void createApplicationUser(ApplicationUser applicationUser) {
+
+		Session sessions = sessionFactory.openSession();
+		Transaction transactions = sessions.beginTransaction();
+		if (applicationUser != null) {
+			try {
+				
+				this.createRecord(applicationUser);
+				
+				transactions.commit();
+				this.closeSession();
+				
+			} catch (Exception e) {
+				transactions.rollback();
+				this.closeSession();
+
+				LOGGER.error("Error creating application user record with error message: " + e.getMessage().toString());
+			}
+		}
+	}
+
+	public void updateApplicationUser(ApplicationUser applicationUser) {
+		Session sessions = sessionFactory.openSession();
+		Transaction transactions = sessions.beginTransaction();
+		if (applicationUser != null) {
+			try {
+				
+				this.updateRecord(applicationUser);
+				
+				transactions.commit();
+				this.closeSession();
+				
+			} catch (Exception e) {
+				transactions.rollback();
+				this.closeSession();
+
+				LOGGER.error("Error updating application user record with error message: " + e.getMessage().toString());
+			}
+		}
+	}
+	
+	public void deleteApplicationUser(ApplicationUser applicationUser) {
+		Session sessions = sessionFactory.openSession();
+		Transaction transactions = sessions.beginTransaction();
+		if (applicationUser != null) {
+			try {
+				
+				this.deleteRecord(applicationUser);
+				
+				transactions.commit();
+				this.closeSession();
+				
+			} catch (Exception e) {
+				transactions.rollback();
+				this.closeSession();
+
+				LOGGER.error("Error deleting application user record with error message: " + e.getMessage().toString());
+			}
+		}
+	}
+	
+	/**
+	 * Search for the list of all application user record as list of the application user class that is passed as the parameter
+	 * @param applicationUser
+	 * @return returns a list of application users.
+	 */
+	public List<ApplicationUser> listOfApplicationUsers(ApplicationUser applicationUser){
+		
+		List<ApplicationUser> userList = null;
+		
+		try {
+			 
+			userList = this.searchRecord(applicationUser);
+			 
+		} catch (Exception e) {
+			// handle exception
+			LOGGER.error("Error searching for application users recordr with error message: " + e.getMessage().toString());
+		}
+		
+		return userList;
+	}
+	
+	
+	@Inject
+	@Named("getApplicationUsersQuery")
+	String applicationUserQuery;
+	
+	@SuppressWarnings("rawtypes")
+	@Override
+	protected WhereClauseBuilder getWhereClauseBuilder(ApplicationUser entity) {
+
+			final WhereClauseBuilder<ApplicationUser> wcb = new WhereClauseBuilder<>();
+			wcb.setQueryString(applicationUserQuery);
+
+			try {
+				
+			//let the whereclausebuilder generate this map thanks to introspection
+			final Map<String, Object> parameters = new LinkedHashMap<>();
+			
+			parameters.put("userName", entity.getUserName());
+			parameters.put("userPassword", entity.getUserPassword());
+			wcb.setParameters(parameters);
+			
+		} catch (Exception e) {
+			// handle exception
+			LOGGER.error("Error searching for application user record with error message: " + e.getMessage().toString());
+		}
+		
+			return wcb;
+	}
+
+}

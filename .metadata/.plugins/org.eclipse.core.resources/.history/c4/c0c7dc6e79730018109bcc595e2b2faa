@@ -1,0 +1,63 @@
+package fr.fortress.quizmanager.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name ="tblStudent", schema = "fortressqmschema")
+public class Student {
+
+	@Id
+	//@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="studentEmail_Id", unique = true, nullable = false, columnDefinition="VARCHAR(45)")
+	String studentEmail;
+	
+	@Column(name="studentFirstName", length=45, nullable = false)
+	String studentFirstName;
+	
+	@Column(name="studentLastName", length=45, nullable = false)
+	String studentLastName;
+
+	@Column(name = "studentPassword", nullable = false, columnDefinition="VARCHAR(25)")
+	private String studentPassword;
+	
+	
+	public String getStudentEmail() {
+		return studentEmail;
+	}
+
+	public void setStudentEmail(String studentEmail) {
+		this.studentEmail = studentEmail;
+	}
+
+	public String getStudentFirstName() {
+		return studentFirstName;
+	}
+
+	public void setStudentFirstName(String studentFirstName) {
+		this.studentFirstName = studentFirstName;
+	}
+
+	public String getStudentLastName() {
+		return studentLastName;
+	}
+
+	public void setStudentLastName(String studentLastName) {
+		this.studentLastName = studentLastName;
+	}
+
+	public String getStudentPassword() {
+		return studentPassword;
+	}
+
+	public void setStudentPassword(String studentPassword) {
+		this.studentPassword = studentPassword;
+	}
+
+	
+
+	
+	
+}

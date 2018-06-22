@@ -1,0 +1,28 @@
+package fr.fortress.quizmanager.model;
+
+public class MCQAnswer {
+	
+	int studentId;
+	int examId;
+	int choiceId;
+	public int getStudentId() {
+		return studentId;
+	}
+	public void setStudentId(int studentId) {
+		this.studentId = studentId;
+	}
+	public int getExamId() {
+		return examId;
+	}
+	public void setExamId(int examId) {
+		this.examId = examId;
+	}
+	public int getChoiceId() {
+		return choiceId;
+	}
+	public void setChoiceId(int choiceId) {
+		this.choiceId = choiceId;
+	}
+
+	
+}

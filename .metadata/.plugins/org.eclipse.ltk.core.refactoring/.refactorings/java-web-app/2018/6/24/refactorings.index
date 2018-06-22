@@ -1,0 +1,16 @@
+1528677771283	Move 'LoginServlet.java' to 'webapp'
+1528678608061	Move 'LoginServlet.java' to 'java'
+1528679262670	Move 'views' to 'WEB-INF'
+1528680704891	Copy file
+1528684262825	Extract local variable 'userName'
+1528684304956	Extract local variable 'userPassword'
+1528686550899	Rename field 'uvService'
+1528687311475	Rename type 'UserValidationService'
+1528688581520	Copy compilation unit
+1528688776186	Copy file
+1528736091158	Rename local variable 'todoName'
+1528736866415	Copy compilation unit
+1529109549234	Copy compilation unit
+1529109792858	Rename type 'TodoServlet'
+1529113121612	Copy compilation unit
+1529116294486	Rename resource 'todo.jsp'

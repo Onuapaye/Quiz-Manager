@@ -1,0 +1,19 @@
+package fr.fortress.quizmanager.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tblUser", schema = "fortressqmschema")
+public class ApplicationUser {
+
+	@Id
+	@Column(name = "userName", unique = true, nullable = false)
+	private String userName;
+	
+	@Column(name = "userPassword", nullable = false, length = 25)
+	private String userPassword;
+	
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="2" key="org.eclipse.egit.ui.internal.clone.GitSelectWizardPageWizardSel"/>
+	<list key="EGit.KnownHosts">
+		<item value="bitbucket.org"/>
+		<item value="git.eclipse.org"/>
+		<item value="github.com"/>
+	</list>
+	<list key="RepositorySelectionPage.UsedUris">
+		<item value="https://github.com/in28minutes/JavaWebApplicationStepByStep.git"/>
+		<item value="https://github.com/thomasbroussard/2018adv_s1.git"/>
+	</list>
+	<section name="GitImportWizard">
+		<item value="true" key="GitProjectsImportPage.STORE_NESTED_PROJECTS"/>
+	</section>
+	<section name="org.eclipse.egit.ui.internal.pull.PullResultDialog.dialogBounds">
+		<item value="537" key="DIALOG_X_ORIGIN"/>
+		<item value="249" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>
