@@ -63,11 +63,11 @@ public class StudentDAO extends GenericORM_DAO_Abstract<Student> {
 		return studentList;
 	}
 
-	public List<Student> getListOfAllStudents(Student student){
+	/*public List<Student> getListOfAllStudents(Student student){
 		
 		List<Student> studentList = this.getListOfRecord(student);
 		return studentList;
-	}
+	}*/
 	
 	@SuppressWarnings("rawtypes")
 	@Override

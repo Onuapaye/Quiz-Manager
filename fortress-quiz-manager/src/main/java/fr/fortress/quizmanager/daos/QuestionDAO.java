@@ -55,13 +55,13 @@ public class QuestionDAO extends GenericORM_DAO_Abstract<Question>  {
 
 		return userList;
 	}
-
+/*
 	public List<Question> getListOfAllQuestions(Question question) {
 
 		List<Question> questionList = this.getListOfRecord(question);
 		return questionList;
 	}
-	
+	*/
 	
 	@Override
 	protected WhereClauseBuilder<Question> getWhereClauseBuilder(Question entity) {

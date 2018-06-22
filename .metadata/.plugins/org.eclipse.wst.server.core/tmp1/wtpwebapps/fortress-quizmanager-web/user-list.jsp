@@ -35,7 +35,7 @@
 			<!-- Left navbar links -->
 			<ul class="navbar-nav">
 				<li class="nav-item"><a class="nav-link" data-widget="pushmenu"
-					href="#"><i class="fa fa-bars"></i></a></li>
+					href="#"><i class="f"C:/Users/Mr Kasapa/eclipse-workspace"a fa-bars"></i></a></li>
 				<li class="nav-item d-none d-sm-inline-block"><a
 					href="resources/lib/admin-lte/index3.html" class="nav-link">Dashboard</a>
 				</li>

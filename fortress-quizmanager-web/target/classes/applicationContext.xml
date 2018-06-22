@@ -70,5 +70,27 @@
 		]]></value></constructor-arg>
 	
 	</bean>
-
+	
+	<bean id="answerQuery" class="java.lang.String">
+		<constructor-arg><value><![CDATA[
+			from Answer
+		]]></value></constructor-arg>
+	</bean>
+	
+	<bean id="examQuery" class="java.lang.String">
+		<constructor-arg><value><![CDATA[
+			from Exam
+		]]></value></constructor-arg>
+	</bean>
+	<bean id="studentQuery" class="java.lang.String">
+		<constructor-arg><value><![CDATA[
+			from Student
+		]]></value></constructor-arg>
+	</bean>
+	<bean id="mcq_answerQuery" class="java.lang.String">
+		<constructor-arg><value><![CDATA[
+			from MCQAnswer
+		]]></value></constructor-arg>
+	</bean>
+	
 </beans>

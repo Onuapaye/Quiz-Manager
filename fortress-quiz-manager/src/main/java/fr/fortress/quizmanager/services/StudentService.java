@@ -65,10 +65,10 @@ public class StudentService {
 
 	}
 
-	public List<Student> getAllStudents(Student student) {
+	/*public List<Student> getAllStudents(Student student) {
 
 		List<Student> studentList = studentDAO.getListOfAllStudents(student);
 		return studentList;
-	}
+	}*/
 
 }

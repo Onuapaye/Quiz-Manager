@@ -45,7 +45,7 @@ public class MCQAnswerDAO extends GenericORM_DAO_Abstract<MCQAnswer> {
 	 * @param applicationUser
 	 * @return returns a list of application mcq_answers.
 	 */
-	public List<MCQAnswer> getByMCQ_Answer(MCQAnswer mcq_answer) {
+	/*public List<MCQAnswer> getByMCQ_Answer(MCQAnswer mcq_answer) {
 
 		List<MCQAnswer> mcq_answerList = null;
 
@@ -60,7 +60,7 @@ public class MCQAnswerDAO extends GenericORM_DAO_Abstract<MCQAnswer> {
 		}
 
 		return mcq_answerList;
-	}
+	}*/
 
 	public List<MCQAnswer> getListOfAllMCQ_Answers(MCQAnswer mcq_answer){
 		

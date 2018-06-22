@@ -1,204 +1,231 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="fortress"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+
 <!DOCTYPE html>
-<html>
+<html style="height: auto;">
 <head>
 <meta charset="utf-8">
-<title>Fortress QuizManager - Dash-board</title>
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<meta content="" name="keywords">
-<meta content="" name="description">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Fortress QuizManager | Dashboard</title>
+<!-- Tell the browser to be responsive to screen width -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- Favicons -->
-<link href="resources/img/favicon.png" rel="icon">
-<!-- <link href="resources/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
-
-<!-- Google Fonts -->
+<!-- Font Awesome -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<!-- Ionicons -->
+<link rel="stylesheet"
+	href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+<!-- Theme style -->
+<link rel="stylesheet"
+	href="resources/lib/admin-lte/dist/css/adminlte.min.css">
+<!-- Google Font: Source Sans Pro -->
 <link
-	href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700"
+	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700"
 	rel="stylesheet">
-
-
-
-<!-- Libraries CSS Files -->
-<!-- <link href="resources/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet"> -->
-<link href="webjars/font-awesome/4.7.0/css/font-awesome.min.css"
-	rel="stylesheet">
-<link href="resources/lib/animate/animate.min.css" rel="stylesheet">
-<link href="resources/lib/ionicons/css/ionicons.min.css"
-	rel="stylesheet">
-<link href="resources/lib/owlcarousel/assets/owl.carousel.min.css"
-	rel="stylesheet">
-<link href="resources/lib/lightbox/css/lightbox.min.css"
-	rel="stylesheet">
-
-<!-- Main Stylesheet File -->
-<link href="resources/css/style.css" rel="stylesheet">
-
-<!-- Bootstrap CSS File -->
-<link href="webjars/bootstrap/4.1.1/css/bootstrap.min.css"
-	rel="stylesheet">
-
 </head>
+<body class="sidebar-mini" style="height: auto;">
+	<div class="wrapper">
+		<!-- Navbar -->
+		<nav
+			class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
+			<!-- Left navbar links -->
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link" data-widget="pushmenu"
+					href="#"><i class="f"C:/Users/MrKasapa/eclipse-workspace"afa-bars"></i></a></li>
+				<li class="nav-item d-none d-sm-inline-block"><a href="#"
+					class="nav-link">Dashboard</a></li>
+				<li class="nav-item d-none d-sm-inline-block"><a href="#"
+					class="nav-link">Contact</a></li>
+			</ul>
 
-<body>
+			<!-- Right navbar links -->
+			<ul class="navbar-nav ml-auto">
+				<!-- Messages Dropdown Menu -->
+				<li class="nav-item dropdown"><a class="nav-link"
+					data-toggle="dropdown" href="#"> <i class="fa fa-bell-o"></i> <span
+						class="badge badge-danger navbar-badge">3</span>
+				</a>
+					<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+						<a href="#" class="dropdown-item"> <!-- Message Start -->
+							<div class="media">
+								<img src="resources/lib/admin-lte/dist/img/avatar.png"
+									alt="User Avatar" class="img-size-50 mr-3 img-circle">
+								<div class="media-body">
+									<h3 class="dropdown-item-title">
+										${userName} <span class="float-right text-sm text-danger"><i
+											class="fa fa-star"></i></span>
+									</h3>
+								</div>
+							</div> <!-- Message End -->
+						</a>
+					</div>
+			</ul>
+		</nav>
+		<!-- /.navbar -->
 
-	<!--==========================
-    Header
-  ============================-->
-	<header id="header" style="background-color: #111;">
-		<div class="container-fluid">
+		<!-- Main Sidebar Container -->
+		<aside class="main-sidebar sidebar-dark-primary elevation-4"
+			style="min-height: 586px;">
+			<!-- Brand Logo -->
+			<a href="resources/lib/admin-lte/index3.html" class="brand-link">
+				<img src="resources/img/epitalogo128x128.png" alt="Logo"
+				class="brand-image img-circle elevation-3" style="opacity: .8">
+				<span class="brand-text font-weight-light">Fortress
+					QuizManager</span>
+			</a>
 
-			<div id="logo" class="pull-left">
-				<h1>
-					<a href="#intro" class="scrollto">QuizManager</a>
-				</h1>
-				<!-- Uncomment below if you prefer to use an image logo -->
-				<!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
+			<!-- Sidebar -->
+			<div class="sidebar">
+				<!-- Sidebar user (optional) -->
+				<div class="user-panel mt-3 pb-3 mb-3 d-flex">
+					<div class="image">
+						<img src="resources/lib/admin-lte/dist/img/avatar.png"
+							class="img-circle elevation-2" alt="User Image">
+					</div>
+					<div class="info">
+						<a href="#" class="d-block">${userFullName}</a>
+					</div>
+				</div>
+
+				<!-- Sidebar Menu -->
+				<nav class="mt-2">
+					<ul class="nav nav-pills nav-sidebar flex-column"
+						data-widget="treeview" role="menu" data-accordion="false">
+						<li class="nav-item"><a href="create-user" class="nav-link">
+								<i class="nav-icon fa fa-th"></i>
+								<p>
+									Users <span class="right badge badge-danger">Add New</span>
+								</p>
+						</a></li>
+					</ul>
+				</nav>
+				<!-- /.sidebar-menu -->
 			</div>
+			<!-- /.sidebar -->
+		</aside>
 
-			<nav id="nav-menu-container">
-				<ul class="nav-menu">
-					<li class="menu-active"><a href="#intro">Dash-Board</a></li>
-					<li class="menu-has-children"><a href="">${userName}</a>
-						<ul>
-							<li><a href="#">Settings</a></li>
-							<li><a href="#">Change Password</a></li>
-							<li><a href="#">Logout</a></li>
-						</ul></li>
-					<li><a href="#contact">Contact</a></li>
-				</ul>
-			</nav>
-			<!-- #nav-menu-container -->
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper" style="min-height: 586px;">
+			<!-- Content Header (Page header) -->
+			<section class="content-header">
+				<div class="container-fluid">
+					<div class="row mb-2">
+						<div class="col-sm-6">
+							<h1>Dashboard</h1>
+						</div>
+					</div>
+				</div>
+				<!-- /.container-fluid -->
+			</section>
+
+			<!-- Main content -->
+			<section class="content">
+				<div class="container-fluid">
+				
+					<div class="row">
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3>150</h3>
+
+                <p>New Orders</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-bag"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3>53<sup style="font-size: 20px">%</sup></h3>
+
+                <p>Bounce Rate</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-stats-bars"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <h3>44</h3>
+
+                <p>User Registrations</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-person-add"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-danger">
+              <div class="inner">
+                <h3>65</h3>
+
+                <p>Unique Visitors</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-pie-graph"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+        </div>
+				
+				</div>
+			</section>
+			<!-- /.content -->
 		</div>
-	</header>
-	<!-- #header -->
-
-	<main id="main"> <!--==========================
-
-      About Us Section
-    ============================-->
-	<section id="services"></section>
-
-	<section id="about">
-		<div class="container">
-
-			<div class="row about-cols">
-
-				<div class="col-md-3 wow fadeInUp">
-					<div class="about-col">
-						<div class="img">
-							<img src="resources/img/apps.png" alt="" class="img-fluid">
-							<div class="icon">
-								<i class="ion-ios-speedometer-outline"></i>
-							</div>
-						</div>
-						<h2 class="title">
-							<a href="users">User Management</a>
-						</h2>
-						<!-- <p>The module to manage all the application Users by performing a
-							simple CRUD (Create, Update, Delete and Read) operations.</p> -->
-							<p>&nbsp;</p>
-					</div>
-				</div>
-
-				<div class="col-md-3 wow fadeInUp" data-wow-delay="0.1s">
-					<div class="about-col">
-						<div class="img">
-							<img src="resources/img/apps.png" alt="" class="img-fluid">
-							<div class="icon">
-								<i class="ion-ios-list-outline"></i>
-							</div>
-						</div>
-						<h2 class="title">
-							<a href="#">Student Management</a>
-						</h2>
-						<!-- <p>The module to manage the Students who comes to take Exams by performing a
-							CRUD (Create, Update, Delete and Read) operations.</p> -->
-							<p>&nbsp;</p>
-					</div>
-				</div>
-
-				<div class="col-md-3 wow fadeInUp" data-wow-delay="0.2s">
-					<div class="about-col">
-						<div class="img">
-							<img src="resources/img/apps.png" alt="" class="img-fluid">
-							<div class="icon">
-								<i class="ion-ios-eye-outline"></i>
-							</div>
-						</div>
-						<h2 class="title">
-							<a href="#">Exam Management</a>
-						</h2>
-						<!-- <p>The module to manage the Exams which Students take by performing a
-							CRUD (Create, Update, Delete and Read) operations.</p> -->
-							<p>&nbsp;</p>
-					</div>
-				</div>
-
-				<div class="col-md-3 wow fadeInUp" data-wow-delay="0.2s">
-					<div class="about-col">
-						<div class="img">
-							<img src="resources/img/apps.png" alt="" class="img-fluid">
-							<div class="icon">
-								<i class="ion-ios-eye-outline"></i>
-							</div>
-						</div>
-						<h2 class="title">
-							<a href="#">Question Management</a>
-						</h2>
-						<!-- <p>The module to manage the Questions to be taken during Exams by performing a
-							CRUD (Create, Update, Delete and Read) operations.</p> -->
-							<p>&nbsp;</p>
-					</div>
-				</div>
-
+		<!-- /.content-wrapper -->
+		<footer class="main-footer">
+			<div class="float-right d-none d-sm-block">
+				<b>Version</b> 1.0.0
 			</div>
+			<strong>Copyright © 2018 <a href="http://adminlte.io">Fortress
+					QuizManager</a>.
+			</strong> All rights reserved.
+		</footer>
 
-		</div>
-	</section>
-	<!-- #about --> </main>
-	<!--==========================
-    Footer
-  ============================-->
-	<footer id="footer">
+		<!-- Control Sidebar -->
+		<!--   <aside class="control-sidebar control-sidebar-dark"> -->
+		<!-- Control sidebar content goes here -->
+		<!--   <div class="p-3"><h5>Customize AdminLTE</h5><hr class="mb-2"><h6>Navbar Variants</h6><div class="d-flex"><div class="d-flex flex-wrap mb-3"><div class="bg-primary elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-info elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-success elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-danger elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-warning elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-white elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-gray-light elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div></div></div><div class="mb-4"><input type="checkbox" value="1" checked="checked" class="mr-1"><span>Navbar border</span></div><h6>Dark Sidebar Variants</h6><div class="d-flex"></div><div class="d-flex flex-wrap mb-3"><div class="bg-primary elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-warning elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-info elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-danger elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-success elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div></div><h6>Light Sidebar Variants</h6><div class="d-flex"></div><div class="d-flex flex-wrap mb-3"><div class="bg-primary elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-warning elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-info elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-danger elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-success elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div></div><h6>Brand Logo Variants</h6><div class="d-flex"></div><div class="d-flex flex-wrap mb-3"><div class="bg-primary elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-info elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-success elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-danger elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-warning elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-white elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-gray-light elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><a href="javascript:void(0)">clear</a></div></div></aside> -->
+		<!-- /.control-sidebar -->
+	</div>
+	<!-- ./wrapper -->
 
-		<div class="container">
-			<div class="copyright">
-				&copy; Copyright <strong>Fortess QuizManager</strong>. All Rights
-				Reserved
-			</div>
-			<div class="credits">
-				Designed by <a href="#"><strong>Bismark and Mihika</strong></a>
-			</div>
-		</div>
-	</footer>
-	<!-- #footer -->
+	<!-- jQuery -->
+	<script src="resources/lib/admin-lte/plugins/jquery/jquery.min.js"></script>
+	<!-- Bootstrap 4 -->
+	<script
+		src="resources/lib/admin-lte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<!-- Slimscroll -->
+	<script
+		src="resources/lib/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+	<!-- FastClick -->
+	<script src="resources/lib/admin-lte/plugins/fastclick/fastclick.js"></script>
+	<!-- AdminLTE App -->
+	<script src="resources/lib/admin-lte/dist/js/adminlte.min.js"></script>
+	<!-- AdminLTE for demo purposes -->
+	<script src="resources/lib/admin-lte/dist/js/demo.js"></script>
 
-	<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-
-
-	<!-- JavaScript Libraries -->
-	<script src="resources/lib/jquery/jquery.min.js"></script>
-	<script src="resources/lib/jquery/jquery-migrate.min.js"></script>
-	<script src="resources/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-	<script src="resources/lib/easing/easing.min.js"></script>
-	<script src="resources/lib/superfish/hoverIntent.js"></script>
-	<script src="resources/lib/superfish/superfish.min.js"></script>
-	<script src="resources/lib/wow/wow.min.js"></script>
-	<script src="resources/lib/waypoints/waypoints.min.js"></script>
-	<script src="resources/lib/counterup/counterup.min.js"></script>
-	<script src="resources/lib/owlcarousel/owl.carousel.min.js"></script>
-	<script src="resources/lib/isotope/isotope.pkgd.min.js"></script>
-	<script src="resources/lib/lightbox/js/lightbox.min.js"></script>
-	<script src="resources/lib/touchSwipe/jquery.touchSwipe.min.js"></script>
-	<!-- Contact Form JavaScript File -->
-	<script src="resources/contactform/contactform.js"></script>
-
-	<!-- JavaScript plugins -->
-	<script src="resources/js/main.js" type="text/javascript"></script>
-	<script src="webjars/jquery/3.3.1-1/jquery.min.js"></script>
-	<script src="webjars/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 
 </body>
 </html>

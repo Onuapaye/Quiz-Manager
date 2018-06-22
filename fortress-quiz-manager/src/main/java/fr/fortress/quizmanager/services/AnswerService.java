@@ -41,10 +41,10 @@ public class AnswerService {
 
 	}
 
-	public List<Answer> getAllAnswers(Answer answer) {
+	/*public List<Answer> getAllAnswers(Answer answer) {
 
 		List<Answer> answerList = answerDAO.getListOfAllAnswers(answer);
 		return answerList;
-	}
+	}*/
 
 }

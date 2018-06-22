@@ -63,11 +63,11 @@ public class ExamDAO extends GenericORM_DAO_Abstract<Exam> {
 		return userList;
 	}
 
-	public List<Exam> getListOfAllExams(Exam exam){
+	/*public List<Exam> getListOfAllExams(Exam exam){
 		
 		List<Exam> examList = this.getListOfRecord(exam);
 		return examList;
-	}
+	}*/
 	
 	@SuppressWarnings("rawtypes")
 	@Override
