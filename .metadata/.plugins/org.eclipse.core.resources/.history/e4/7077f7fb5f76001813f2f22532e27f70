@@ -1,0 +1,5 @@
+package fr.fortress.quizmanager.daos;
+
+public class AnswerDAO extends GenericORM_DAO_Abstract<Answer> {
+
+}

@@ -1,0 +1,71 @@
+package fr.fortress.quizmanager.services;
+
+import java.util.List;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Component;
+
+import fr.fortress.quizmanager.daos.ExamDAO;
+import fr.fortress.quizmanager.model.Exam;
+
+@Component
+public class MCQAnswerService {
+
+	@Inject
+	ExamDAO mcq_answerDAO;
+
+	public boolean isUserAuthenticated(String mcq_answerTitleName, int mcq_answerId) {
+
+		Exam mcq_answer = new Exam();
+		mcq_answer.setExamTitleName(mcq_answerTitleName);
+		mcq_answer.setExamId(mcq_answerId);
+
+		List<Exam> mcq_answerList = mcq_answerDAO.searchRecord(mcq_answer);
+
+		int count = mcq_answerList.size();
+		boolean result = false;
+
+		for (int i = 0; i < count; i++) {
+
+			if (mcq_answer.getExamTitleName().equals(mcq_answerList.get(i).getExamTitleName())
+					&& mcq_answer.getExamId() == mcq_answerList.get(i).getExamId()) {
+				result = true;
+			} else {
+				result = false;
+			}
+		}
+		return result;
+
+	}
+
+	public boolean createExam(Exam mcq_answer) {
+
+		if (mcq_answer.getExamTitleName().equals(null) || mcq_answer.getExamTitleName().equals("")) {
+
+			return false;
+		} else {
+			mcq_answerDAO.createExam(mcq_answer);
+			return true;
+		}
+
+	}
+
+	public boolean updateExam(Exam mcq_answer) {
+
+		if (mcq_answer.getExamTitleName().equals("")) {
+
+			return false;
+		} else {
+			mcq_answerDAO.updateExam(mcq_answer);
+			return true;
+		}
+
+	}
+
+	public List<Exam> getAllExams(Exam mcq_answer) {
+
+		List<Exam> mcq_answerList = mcq_answerDAO.getListOfAllExams(mcq_answer);
+		return mcq_answerList;
+	}
+}

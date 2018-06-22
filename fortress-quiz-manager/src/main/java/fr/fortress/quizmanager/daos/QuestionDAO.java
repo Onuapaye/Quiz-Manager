@@ -1,11 +1,14 @@
 package fr.fortress.quizmanager.daos;
 
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Repository;
 
 import fr.fortress.quizmanager.model.Question;
@@ -17,6 +20,48 @@ public class QuestionDAO extends GenericORM_DAO_Abstract<Question>  {
 	@Inject
 	@Named("questionQuery")
 	String query;
+	
+	private static final Logger LOGGER = LogManager.getLogger(QuestionDAO.class);
+
+	public void createQuestion(Question question) {
+
+		this.createRecord(question);
+	}
+
+	public void updateQuestion(Question question) {
+
+		this.updateRecord(question);
+	}
+
+	public void deleteQuestion(Question question) {
+
+		this.deleteRecord(question);
+	}
+
+	
+	public List<Question> getByQuestionNamePassword(Question question) {
+
+		List<Question> userList = null;
+
+		try {
+
+			userList = this.searchRecord(question);
+
+		} catch (Exception e) {
+			// handle exception
+			LOGGER.error(
+					"Error searching for exams record with error message: " + e.getMessage().toString());
+		}
+
+		return userList;
+	}
+
+	public List<Question> getListOfAllQuestions(Question question) {
+
+		List<Question> questionList = this.getListOfRecord(question);
+		return questionList;
+	}
+	
 	
 	@Override
 	protected WhereClauseBuilder<Question> getWhereClauseBuilder(Question entity) {
@@ -32,13 +77,5 @@ public class QuestionDAO extends GenericORM_DAO_Abstract<Question>  {
 		return wcb;
 	}
 
-	
-	/*@Override
-	protected String getSearchQuery() {
-		// TODO Auto-generated method stub
-		return null;
-	}*/
-
-	
 	
 }

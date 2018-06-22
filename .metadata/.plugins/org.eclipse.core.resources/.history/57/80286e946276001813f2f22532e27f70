@@ -1,0 +1,9 @@
+package fr.fortress.quizmanager.daos;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class MCQAnswerDAO extends GenericORM_DAO_Abstract<T> {
+
+	
+}
