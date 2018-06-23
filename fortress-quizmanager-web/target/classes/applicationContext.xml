@@ -48,13 +48,23 @@
 		<constructor-arg>
 			<value><![CDATA[
 			from Question as question where
-				question.type = :type
+				question.questionType = :questionType
 			and
-				question.question = :question
+				question.questionTitle = :questionTitle
+			and 
+				question.examId = :examId
+			and question.questionId = :questionId
 		]]></value>
 		</constructor-arg>
-
 	</bean>
+	<bean id="allQuestionsQuery" class="java.lang.String">
+		<constructor-arg>
+			<value><![CDATA[
+			from Question
+		]]></value>
+		</constructor-arg>
+	</bean>
+	
 	
 	<!-- QUERY TO FETCH ALL APPLICATION USERS BY USERNAME AND PASSWORD -->
 	<bean id="userQuery" class="java.lang.String">
@@ -83,11 +93,11 @@
 			from Exam
 		]]></value></constructor-arg>
 	</bean>
-	<bean id="allExamsQuery" class="java.lang.String">
+	<!-- <bean id="allExamsQuery" class="java.lang.String">
 		<constructor-arg><value><![CDATA[
 			from Exam
 		]]></value></constructor-arg>
-	</bean>
+	</bean> -->
 	
 	
 	<!-- STUDENT RELATED QUERIES -->

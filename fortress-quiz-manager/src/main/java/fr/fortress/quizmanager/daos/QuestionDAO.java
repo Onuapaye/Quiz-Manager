@@ -19,10 +19,10 @@ public class QuestionDAO extends GenericORM_DAO_Abstract<Question>  {
 
 	@Inject
 	@Named("questionQuery")
-	String query;
+	String queryQuestions;
 	
 	@Inject
-	@Named("allQuestionQuery")
+	@Named("allQuestionsQuery")
 	String getAllQuestionsQuery;
 	
 	private static final Logger LOGGER = LogManager.getLogger(QuestionDAO.class);
@@ -71,7 +71,7 @@ public class QuestionDAO extends GenericORM_DAO_Abstract<Question>  {
 	protected WhereClauseBuilder<Question> getWhereClauseBuilder(Question entity) {
 		
 		final WhereClauseBuilder<Question> wcb = new WhereClauseBuilder<>();
-		wcb.setQueryString(query);
+		wcb.setQueryString(queryQuestions);
 
 		// TODO as bonus : let the whereclausebuilder generate this map thanks to introspection
 		final Map<String, Object> parameters = new LinkedHashMap<>();

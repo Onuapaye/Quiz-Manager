@@ -195,7 +195,13 @@
 															<form action="delete-student?deleteExam=${examList.examId}" method="POST">
 																<button class="btn btn-sm btn-danger">Delete</button>
 															</form>
-													</span></td>
+													</span>
+													<span class="right badge badge-danger">
+															<form action="take-exam?takeExam=${examList.examId}" method="POST">
+																<button class="btn btn-sm btn-danger">Take Exam</button>
+															</form>
+													</span>
+													</td>
 												</tr>
 											</fortress:forEach>
 

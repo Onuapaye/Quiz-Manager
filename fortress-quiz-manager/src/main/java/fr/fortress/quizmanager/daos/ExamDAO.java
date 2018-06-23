@@ -22,9 +22,9 @@ public class ExamDAO extends GenericORM_DAO_Abstract<Exam> {
 	@Named("examQuery")
 	String queryExam;
 	
-	@Inject
+	/*@Inject
 	@Named("allExamsQuery")
-	String getAllExamsQuery;
+	String getAllExamsQuery;*/
 
 	private static final Logger LOGGER = LogManager.getLogger(ExamDAO.class);
 
@@ -69,7 +69,7 @@ public class ExamDAO extends GenericORM_DAO_Abstract<Exam> {
 
 	public List<Exam> getListOfAllExams(Exam exam){
 		
-		List<Exam> examList = this.getListOfRecord(exam, getAllExamsQuery);
+		List<Exam> examList = this.getListOfRecord(exam, queryExam);
 		return examList;
 	}
 	

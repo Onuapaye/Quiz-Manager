@@ -104,7 +104,6 @@ public abstract class GenericORM_DAO_Abstract<T> {
 			session.delete(entity);
 
 			transactions.commit();
-			this.closeSession();
 
 		} catch (Exception e) {
 			transactions.rollback();
@@ -136,8 +135,8 @@ public abstract class GenericORM_DAO_Abstract<T> {
 			transactions.commit();		
 		} catch (Exception e) {
 
-			this.closeSession();
 			transactions.rollback();
+			//this.closeSession();
 			
 			listOfRecord = null;
 		}

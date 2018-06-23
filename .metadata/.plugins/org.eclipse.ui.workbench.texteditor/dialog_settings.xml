@@ -2,35 +2,44 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="resources/lib/admin-lte" key="selection"/>
-		<item value="false" key="casesensitive"/>
+		<item value="questionQuery" key="selection"/>
+		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="questionQuery"/>
+			<item value="exam"/>
+			<item value="exams"/>
+			<item value="Exams"/>
+			<item value="Exam"/>
+			<item value="student"/>
+			<item value="Student"/>
+			<item value="studentList"/>
+			<item value="Students"/>
+			<item value="students"/>
+			<item value="3"/>
+			<item value="user"/>
+			<item value="User"/>
+			<item value="UserName"/>
 			<item value="../.."/>
-			<item value="todo"/>
-			<item value="request"/>
-			<item value="spring-test"/>
-			<item value="spring-core"/>
-			<item value="hibernate-core"/>
-			<item value="spring"/>
-			<item value="hiber-core"/>
-			<item value="text-transform"/>
-			<item value=".nav-menu a"/>
-			<item value="api"/>
-			<item value="servlet-api"/>
-			<item value="javax.servlet"/>
-			<item value="javax-servlet"/>
-			<item value="poppins"/>
 		</list>
 		<list key="replacehistory">
-			<item value="resources/lib/admin-lte"/>
-			<item value=""/>
-			<item value=".."/>
-			<item value="resources/lib/login-page/fonts/font-awesome-4.7.0"/>
-			<item value="resources/lib/login-page/font-awesome-4.7.0"/>
-			<item value="resources/lib/login-page"/>
+			<item value="question"/>
+			<item value="questions"/>
+			<item value="Questions"/>
+			<item value="Question"/>
+			<item value="exam"/>
+			<item value="Exam"/>
+			<item value="examList"/>
+			<item value="Exams"/>
+			<item value="exams"/>
+			<item value="MCQAnswer"/>
+			<item value="mcq_answer"/>
+			<item value="MCQ_Answer"/>
+			<item value="Answer"/>
+			<item value="Enswer"/>
+			<item value="answer"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
