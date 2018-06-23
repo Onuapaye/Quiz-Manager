@@ -36,7 +36,7 @@
 			<ul class="navbar-nav">
 				<li class="nav-item"><a class="nav-link" data-widget="pushmenu"
 					href="#"><i class="f"C:/Users/MrKasapa/eclipse-workspace"afa-bars"></i></a></li>
-				<li class="nav-item d-none d-sm-inline-block"><a href="#"
+				<li class="nav-item d-none d-sm-inline-block"><a href="dashboard"
 					class="nav-link">Dashboard</a></li>
 				<li class="nav-item d-none d-sm-inline-block"><a href="#"
 					class="nav-link">Contact</a></li>
@@ -92,7 +92,7 @@
 				</div>
 
 				<!-- Sidebar Menu -->
-				<nav class="mt-2">
+				<!-- <nav class="mt-2">
 					<ul class="nav nav-pills nav-sidebar flex-column"
 						data-widget="treeview" role="menu" data-accordion="false">
 						<li class="nav-item"><a href="create-user" class="nav-link">
@@ -102,7 +102,7 @@
 								</p>
 						</a></li>
 					</ul>
-				</nav>
+				</nav> -->
 				<!-- /.sidebar-menu -->
 			</div>
 			<!-- /.sidebar -->
@@ -131,14 +131,14 @@
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>150</h3>
+                <h3>&nbsp;</h3>
 
-                <p>New Orders</p>
+                <p style="font-weight: bold; font-size: larger;">Student Management</p>
               </div>
               <div class="icon">
                 <i class="ion ion-bag"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+              <a href="students" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -146,14 +146,14 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>53<sup style="font-size: 20px">%</sup></h3>
+                <h3>&nbsp;</h3>
 
-                <p>Bounce Rate</p>
+                <p style="font-weight: bold; font-size: larger;">Exam Management</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+              <a href="exams" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -161,14 +161,14 @@
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>44</h3>
+                <h3>&nbsp;</h3>
 
-                <p>User Registrations</p>
+                <p style="font-weight: bold; font-size: larger;">User Management</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+              <a href="users" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -176,14 +176,14 @@
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>65</h3>
+                <h3>&nbsp;</h3>
 
-                <p>Unique Visitors</p>
+                <p style="font-weight: bold; font-size: larger;">Questions Management</p>
               </div>
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+              <a href="questions" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->

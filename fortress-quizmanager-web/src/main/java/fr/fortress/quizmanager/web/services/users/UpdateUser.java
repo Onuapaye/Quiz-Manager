@@ -58,7 +58,7 @@ public class UpdateUser extends SpringServlet implements Servlet {
 
 			}
 		}
-		response.sendRedirect("update-user?userName=");
+		response.sendRedirect("update-user");
 
 		final boolean updated = appUserService.updateApplicationUser(appUser);
 		if (updated) {

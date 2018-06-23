@@ -33,7 +33,7 @@
 				<li class="nav-item"><a class="nav-link" data-widget="pushmenu"
 					href="#"><i class="fa fa-bars"></i></a></li>
 				<li class="nav-item d-none d-sm-inline-block"><a
-					href="resources/lib/admin-lte/index3.html" class="nav-link">Dashboard</a>
+					href="dashboard" class="nav-link">Dashboard</a>
 				</li>
 				<li class="nav-item d-none d-sm-inline-block"><a href="#"
 					class="nav-link">Contact</a></li>
@@ -49,7 +49,7 @@
 					<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
 						<a href="#" class="dropdown-item"> <!-- Message Start -->
 							<div class="media">
-								<img src="resources/lib/admin-lte/dist/img/user1-128x128.jpg"
+								<img src="resources/lib/admin-lte/dist/img/avatar.png"
 									alt="User Avatar" class="img-size-50 mr-3 img-circle">
 								<div class="media-body">
 									<h3 class="dropdown-item-title">
@@ -68,7 +68,7 @@
 		<aside class="main-sidebar sidebar-dark-primary elevation-4"
 			style="min-height: 586px;">
 			<!-- Brand Logo -->
-			<a href="resources/lib/admin-lte/index3.html" class="brand-link">
+			<a href="dashboard" class="brand-link">
 				<img src="resources/img/epitalogo128x128.png" alt="Logo"
 				class="brand-image img-circle elevation-3" style="opacity: .8">
 				<span class="brand-text font-weight-light">Fortress
