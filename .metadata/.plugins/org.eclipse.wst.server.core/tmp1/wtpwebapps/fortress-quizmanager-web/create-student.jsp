@@ -187,7 +187,7 @@
 									<div class="card-footer">
 										<button type="submit" class="btn btn-success">Create
 											Student</button>
-										<a href="users" class="btn btn-default">Cancel</a>
+										<a href="students" class="btn btn-default">Cancel</a>
 									</div>
 								</form>
 

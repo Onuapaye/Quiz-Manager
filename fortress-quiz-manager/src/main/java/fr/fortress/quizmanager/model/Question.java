@@ -1,5 +1,6 @@
 package fr.fortress.quizmanager.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,80 +13,77 @@ public class Question {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id;
+	private Integer questionId;
 
-	private String question;
+	@Column(name = "question", nullable = false, columnDefinition="VARCHAR(255)")
+	private String questionTitle;
+	
+	@Column(name = "questionType", nullable = false, columnDefinition="VARCHAR(45)")
 	private QuestionType questionType;
+	
+	@Column(name = "examId", nullable = false, columnDefinition="INT()")
+	private int examId;
+	
+	@Column(name = "questionInstruction", nullable = true, columnDefinition="VARCHAR(255)")
+	private String questionInstruction;
+	
 	
 	public Question() {
 		
 	}
-	
-	
-	/**
-	 * @return the id
-	 */
-	public Integer getId() {
-		return id;
-	}
 
-
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-
-	/**
-	 * @return the questionId
-	 */
 	public Integer getQuestionId() {
-		return id;
+		return questionId;
 	}
-	/**
-	 * @param questionId the questionId to set
-	 */
+
 	public void setQuestionId(Integer questionId) {
-		this.id = questionId;
+		this.questionId = questionId;
 	}
-	/**
-	 * @return the questionType
-	 */
+
+	public String getQuestionTitle() {
+		return questionTitle;
+	}
+
+	public void setQuestionTitle(String questionTitle) {
+		this.questionTitle = questionTitle;
+	}
+
 	public QuestionType getQuestionType() {
 		return questionType;
 	}
-	/**
-	 * @param questionType the questionType to set
-	 */
+
 	public void setQuestionType(QuestionType questionType) {
 		this.questionType = questionType;
 	}
-	/**
-	 * @return the question
-	 */
-	public String getQuestion() {
-		return question;
-	}
-	/**
-	 * @param question the question to set
-	 */
-	public void setQuestion(String question) {
-		this.question = question;
+
+	public int getExamId() {
+		return examId;
 	}
 
+	public void setExamId(int examId) {
+		this.examId = examId;
+	}
+
+	
+	public String getQuestionInstruction() {
+		return questionInstruction;
+	}
+
+	public void setQuestionInstruction(String questionInstruction) {
+		this.questionInstruction = questionInstruction;
+	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((question == null) ? 0 : question.hashCode());
+		result = prime * result + examId;
+		result = prime * result + ((questionId == null) ? 0 : questionId.hashCode());
+		result = prime * result + ((questionInstruction == null) ? 0 : questionInstruction.hashCode());
+		result = prime * result + ((questionTitle == null) ? 0 : questionTitle.hashCode());
 		result = prime * result + ((questionType == null) ? 0 : questionType.hashCode());
 		return result;
 	}
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -96,20 +94,32 @@ public class Question {
 		if (getClass() != obj.getClass())
 			return false;
 		Question other = (Question) obj;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
+		if (examId != other.examId)
 			return false;
-		if (question == null) {
-			if (other.question != null)
+		if (questionId == null) {
+			if (other.questionId != null)
 				return false;
-		} else if (!question.equals(other.question))
+		} else if (!questionId.equals(other.questionId))
+			return false;
+		if (questionInstruction == null) {
+			if (other.questionInstruction != null)
+				return false;
+		} else if (!questionInstruction.equals(other.questionInstruction))
+			return false;
+		if (questionTitle == null) {
+			if (other.questionTitle != null)
+				return false;
+		} else if (!questionTitle.equals(other.questionTitle))
 			return false;
 		if (questionType != other.questionType)
 			return false;
 		return true;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Question [questionId=" + questionId + ", questionTitle=" + questionTitle + ", questionType="
+				+ questionType + ", examId=" + examId + ", questionInstruction=" + questionInstruction + "]";
+	}
 	
 }

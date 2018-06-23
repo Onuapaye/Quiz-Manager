@@ -7,7 +7,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Fortress QuizManager | Students Management</title>
+<title>Fortress QuizManager | Exams Management</title>
 <!-- Tell the browser to be responsive to screen width -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -93,17 +93,19 @@
 				<nav class="mt-2">
 					<ul class="nav nav-pills nav-sidebar flex-column"
 						data-widget="treeview" role="menu" data-accordion="false">
-						<li class="nav-item"><a href="create-student"
+						<li class="nav-item">
+						<a href="create-exam"
 							class="nav-link"> <i class="nav-icon fa fa-th"></i>
 								<p>
-									Students <span class="right badge badge-danger">Add New</span>
+									Exams <span class="right badge badge-danger">Add New</span>
 								</p>
-						</a></li>
+						</a>
+						</li>
 
-						<li class="nav-item"><a href="students" class="nav-link">
-								<i class="nav-icon fa fa-th"></i>
+						<li class="nav-item"><a href="exams" class="nav-link">
+<!-- 								<i class="nav-icon fa fa-th"></i> -->
 								<p>
-									Students <span class="right badge badge-success">Show
+									&nbsp;<span class="right badge badge-success">Show
 										All</span>
 								</p>
 						</a></li>
@@ -122,12 +124,12 @@
 				<div class="container-fluid">
 					<div class="row mb-2">
 						<div class="col-sm-6">
-							<h1>Student Management</h1>
+							<h1>Exam Management</h1>
 						</div>
 						<div class="col-sm-6">
 							<ol class="breadcrumb float-sm-right">
-								<li class="breadcrumb-item"><a href="users">Students</a></li>
-								<li class="breadcrumb-item active">Update Students</li>
+								<li class="breadcrumb-item"><a href="users">Exams</a></li>
+								<li class="breadcrumb-item active">Update Exams</li>
 							</ol>
 						</div>
 					</div>
@@ -143,7 +145,7 @@
 						<div class="col-12">
 							<div class="card">
 								<div class="card-header">
-									<h3 class="card-title">Update Student</h3>
+									<h3 class="card-title">Update Exam</h3>
 
 									<div class="card-tools">
 										<div class="input-group input-group-sm" style="width: 200px;">
@@ -159,40 +161,29 @@
 									</div>
 								</div>
 
-								<form role="form" action="update-student" method="POST">
+								<form role="form" action="update-exam" method="POST">
 									<div class="card-body">
-										<%-- <div class="form-group">
-											<label for="studentEmail">Email Address</label> <input
-												type="email" class="form-control" id="studentEmail"
-												placeholder="Enter email" disabled="" value="${studentEmail}"
-												name="studentEmail">
-										</div> --%>
 										<span><input type="hidden"
-											value="${studentEmail}" name="hiddenStudentEmail"></span>
+											value="${examId}" name="hiddenExamId"></span>
 										<div class="form-group">
-											<label for="firstName">First Name</label> <input type="text"
+											<label for="examTitle">Exam Title</label> <input type="text"
 												class="form-control" id="firstName"
-												placeholder="Enter first name" value="${firstName}"
-												name="firstName">
+												placeholder="Enter first name" name="examTitle" value="${examTitle}">
 										</div>
 										<div class="form-group">
-											<label for="lastName">First Name</label> <input type="text"
-												class="form-control" id="lastName"
-												placeholder="Enter last name" value="${lastName}"
-												name="lastName">
+											<label for="examDescription">Exam Description</label>
+											<textarea class="form-control" rows="3"
+												placeholder="Enter exam description" id="examDescription" name="examDescription"
+												value="${examDescription}"></textarea>
 										</div>
-										<div class="form-group">
-											<label for="studentPassword">Password</label> <input
-												type="password" class="form-control" id="studentPassword"
-												placeholder="Password" name="studentPassword">
-										</div>
+
 									</div>
 									<!-- /.card-body -->
 
 									<div class="card-footer">
 										<button type="submit" class="btn btn-success">Update
-											Student</button>
-										<span><a href="students" class="btn btn-default">Cancel</a></span>
+											Exam</button>
+										<span><a href="exams" class="btn btn-default">Cancel</a></span>
 									</div>
 								</form>
 

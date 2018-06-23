@@ -39,7 +39,7 @@ public class TestMCQ_Question {
 		final Transaction tx = session.beginTransaction();
 		final Question question = new Question();
 		
-		question.setQuestion("How to configure Hibernate?");
+		question.setQuestionTitle("How to configure Hibernate?");
 		question.setQuestionType(QuestionType.MCQ);
 
 		questDAO.createRecord(question);

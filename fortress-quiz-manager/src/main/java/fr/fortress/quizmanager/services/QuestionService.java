@@ -21,25 +21,56 @@ public class QuestionService {
 	private MCQChoiceDAO mcqChoiceDAO;
 
 	@Inject
-	private QuestionDAO questiondao;
+	private QuestionDAO questionDAO;
 
 	@Inject
 	private SessionFactory factory;
 
+	public boolean createQuestion(Question question) {
+
+		if (question.getQuestionTitle().equals(null) || question.getQuestionTitle().equals("") || question.getExamId() <= 0
+				|| question.getQuestionType().equals(null) || question.getQuestionTitle().equals("")) {
+
+			return false;
+		} else {
+			questionDAO.createQuestion(question);
+			return true;
+		}
+
+	}
+
+	public boolean updateQuestion(Question question) {
+
+		if (question.getQuestionTitle().equals("") || question.getExamId() <= 0 ) {
+
+			return false;
+		} else {
+			questionDAO.updateQuestion(question);
+			return true;
+		}
+
+	}
+
+	public List<Question> getAllQuestions(Question question) {
+
+		List<Question> questionList = questionDAO.getListOfAllQuestions(question);
+		return questionList;
+	}
+
 	// @Transactional
 	// TODO check that in a further lecture
 	public void deleteQuestion(Question question) {
-		
+
 		final Transaction transaction = factory.openSession().beginTransaction();
-		
+
 		final MCQChoice criteria = new MCQChoice();
 		criteria.setQuestion(question);
-		
+
 		final List<MCQChoice> choicesList = mcqChoiceDAO.searchRecord(criteria);
 		for (final MCQChoice choice : choicesList) {
 			mcqChoiceDAO.deleteRecord(choice);
 		}
-		questiondao.deleteRecord(question);
+		questionDAO.deleteRecord(question);
 		transaction.commit();
 	}
 

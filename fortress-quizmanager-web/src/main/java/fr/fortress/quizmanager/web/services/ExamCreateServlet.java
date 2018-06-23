@@ -46,7 +46,7 @@ public class ExamCreateServlet extends SpringServlet {
 		
 		Exam exam = new Exam();
 
-		exam.setExamId(Integer.parseInt(request.getParameter("examId")));
+		//exam.setExamId(Integer.parseInt(request.getParameter("examId")));
 		exam.setExamTitleName(request.getParameter("examTitle"));
 		exam.setExamDescription(request.getParameter("examDescription"));
 	

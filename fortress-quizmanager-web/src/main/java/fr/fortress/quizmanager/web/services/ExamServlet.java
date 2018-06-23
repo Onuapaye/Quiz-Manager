@@ -58,9 +58,9 @@ public class ExamServlet extends SpringServlet {
 			if (exam_Id == lstExams.get(i).getExamId()) {
 
 				request.setAttribute("examId", lstExams.get(i).getExamId());
-				request.setAttribute("examName", lstExams.get(i).getExamTitleName());
+				request.setAttribute("examTitle", lstExams.get(i).getExamTitleName());
 				request.setAttribute("examDescription", lstExams.get(i).getExamDescription());
-				request.setAttribute("className", lstExams.get(i).getClass().getName());
+				//request.setAttribute("className", lstExams.get(i).getClass().getName());
 
 				request.getRequestDispatcher("/WEB-INF/views/update-exam.jsp").forward(request, response);
 

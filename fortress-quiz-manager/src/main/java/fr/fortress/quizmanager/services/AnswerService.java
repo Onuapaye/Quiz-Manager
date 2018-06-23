@@ -1,7 +1,5 @@
 package fr.fortress.quizmanager.services;
 
-import java.util.List;
-
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Component;
@@ -17,7 +15,7 @@ public class AnswerService {
 
 	public boolean createAnswer(Answer answer) {
 
-		if (answer.getQuestion().getId() <= 0 || answer.getExam().getExamId() <= 0
+		if (answer.getQuestion().getQuestionId() <= 0 || answer.getExam().getExamId() <= 0
 				|| answer.getStudent().getStudentEmail().equals("")) {
 
 			return false;
@@ -30,7 +28,7 @@ public class AnswerService {
 
 	public boolean updateAnswer(Answer answer) {
 
-		if (answer.getQuestion().getId() <= 0 || answer.getExam().getExamId() <= 0
+		if (answer.getQuestion().getQuestionId() <= 0 || answer.getExam().getExamId() <= 0
 				|| answer.getStudent().getStudentEmail().equals("")) {
 
 			return false;

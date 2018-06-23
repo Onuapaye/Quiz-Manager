@@ -20,3 +20,5 @@
 1529638158929	Rename method 'getApplicationUsersByUserNamePassword'
 1529699928445	Rename type 'QuestionOperationsService'
 1529702407437	Rename type 'MCQAnswer'
+1529776091950	Rename field 'id'
+1529776114055	Rename field 'question'

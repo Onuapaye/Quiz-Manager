@@ -9,7 +9,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Fortress QuizManager | User Management</title>
+<title>Fortress QuizManager | Exams Management</title>
 <!-- Tell the browser to be responsive to screen width -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -96,10 +96,10 @@
 				<nav class="mt-2">
 					<ul class="nav nav-pills nav-sidebar flex-column"
 						data-widget="treeview" role="menu" data-accordion="false">
-						<li class="nav-item"><a href="create-student" class="nav-link">
+						<li class="nav-item"><a href="create-exam" class="nav-link">
 								<i class="nav-icon fa fa-th"></i>
 								<p>
-									Student <span class="right badge badge-danger">Add New</span>
+									Exam <span class="right badge badge-danger">Add New</span>
 								</p>
 						</a></li>
 
@@ -124,12 +124,12 @@
 				<div class="container-fluid">
 					<div class="row mb-2">
 						<div class="col-sm-6">
-							<h1>Student Management</h1>
+							<h1>Exam Management</h1>
 						</div>
 						<div class="col-sm-6">
 							<ol class="breadcrumb float-sm-right">
-								<li class="breadcrumb-item"><a href="#">Students</a></li>
-								<li class="breadcrumb-item active">All Student</li>
+								<li class="breadcrumb-item"><a href="#">Exams</a></li>
+								<li class="breadcrumb-item active">All Exam</li>
 							</ol>
 						</div>
 					</div>
@@ -145,7 +145,7 @@
 						<div class="col-12">
 							<div class="card">
 								<div class="card-header">
-									<h3 class="card-title">List Of Students</h3>
+									<h3 class="card-title">List Of Exams</h3>
 
 									<div class="card-tools">
 										<div class="input-group input-group-sm" style="width: 200px;">
@@ -167,32 +167,32 @@
 										<tbody>
 											<tr>
 												<!-- <th>Serial #</th> -->
-												<th>Student ID</th>
-												<th>First Name</th>
-												<th>Last Name</th>
+												<th>#</th>
+												<th>Exam Title</th>
+												<th>Description</th>
 											</tr>
 
 											<!-- A LOOP TO GET THE LIST OF ALL USERS -->
-											<fortress:forEach items="${listOfStudents}" var="studentList">
+											<fortress:forEach items="${listOfExams}" var="examList">
 												<tr>
-													<td>${studentList.studentEmail}</td>
-													<td>${studentList.studentFirstName}</td>
-													<td>${studentList.studentLastName}</td>
+													<td>${examList.examId}</td>
+													<td>${examList.examTitleName}</td>
+													<td>${examList.examDescription}</td>
 													<td><span class="right badge badge-primary">
-															<form action="view-student?viewStudent=${studentList.studentEmail}"
+															<form action="view-student?viewExam=${examList.examId}"
 																method="POST">
 																<button class="btn btn-sm btn-primary">View</button>
 															</form>
 
 													</span> <span class="right badge badge-success">
 															<form
-																action="students?updateStudent=${studentList.studentEmail}"
+																action="exams?updateExam=${examList.examId}"
 																method="POST">
 																<button class="btn btn-sm btn-success">Update</button>
 															</form>
 
 													</span> <span class="right badge badge-danger">
-															<form action="delete-student?deleteStudent=${studentList.studentEmail}" method="POST">
+															<form action="delete-student?deleteExam=${examList.examId}" method="POST">
 																<button class="btn btn-sm btn-danger">Delete</button>
 															</form>
 													</span></td>
@@ -209,7 +209,6 @@
 					</div>
 
 				</div>
-		</div>
 		</section>
 		<!-- /.content -->
 	</div>

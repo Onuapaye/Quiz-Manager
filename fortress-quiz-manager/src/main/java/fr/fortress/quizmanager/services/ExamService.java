@@ -15,7 +15,7 @@ public class ExamService {
 	@Inject
 	ExamDAO examDAO;
 
-	public boolean isUserAuthenticated(String examTitleName, int examId) {
+	/*public boolean isUserAuthenticated(String examTitleName, int examId) {
 
 		Exam exam = new Exam();
 		exam.setExamTitleName(examTitleName);
@@ -37,7 +37,7 @@ public class ExamService {
 		}
 		return result;
 
-	}
+	}*/
 
 	public boolean createExam(Exam exam) {
 

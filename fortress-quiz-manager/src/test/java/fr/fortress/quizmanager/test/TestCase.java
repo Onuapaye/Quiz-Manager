@@ -31,7 +31,7 @@ public class TestCase {
 		Assert.assertNotNull(sf);
 
 		final Question question = new Question();
-		question.setQuestion("How to configure Hibernate?");
+		question.setQuestionTitle("How to configure Hibernate?");
 		question.setQuestionType(QuestionType.MCQ);
 		
 

@@ -21,6 +21,10 @@ public class QuestionDAO extends GenericORM_DAO_Abstract<Question>  {
 	@Named("questionQuery")
 	String query;
 	
+	@Inject
+	@Named("allQuestionQuery")
+	String getAllQuestionsQuery;
+	
 	private static final Logger LOGGER = LogManager.getLogger(QuestionDAO.class);
 
 	public void createQuestion(Question question) {
@@ -55,13 +59,13 @@ public class QuestionDAO extends GenericORM_DAO_Abstract<Question>  {
 
 		return userList;
 	}
-/*
+
 	public List<Question> getListOfAllQuestions(Question question) {
 
-		List<Question> questionList = this.getListOfRecord(question);
+		List<Question> questionList = this.getListOfRecord(question, getAllQuestionsQuery);
 		return questionList;
 	}
-	*/
+	
 	
 	@Override
 	protected WhereClauseBuilder<Question> getWhereClauseBuilder(Question entity) {
@@ -71,8 +75,10 @@ public class QuestionDAO extends GenericORM_DAO_Abstract<Question>  {
 
 		// TODO as bonus : let the whereclausebuilder generate this map thanks to introspection
 		final Map<String, Object> parameters = new LinkedHashMap<>();
-		parameters.put("type", entity.getQuestionType());
-		parameters.put("question", entity.getQuestion());
+		parameters.put("questionId", entity.getQuestionId());
+		parameters.put("questionType", entity.getQuestionType());
+		parameters.put("questionTitle", entity.getQuestionTitle());
+		parameters.put("examId", entity.getExamId());
 		wcb.setParameters(parameters);
 		return wcb;
 	}
