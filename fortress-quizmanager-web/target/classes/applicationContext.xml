@@ -83,6 +83,11 @@
 			from Exam
 		]]></value></constructor-arg>
 	</bean>
+	<bean id="allExamsQuery" class="java.lang.String">
+		<constructor-arg><value><![CDATA[
+			from Exam
+		]]></value></constructor-arg>
+	</bean>
 	
 	
 	<!-- STUDENT RELATED QUERIES -->

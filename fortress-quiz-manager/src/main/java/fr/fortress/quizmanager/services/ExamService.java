@@ -63,10 +63,10 @@ public class ExamService {
 
 	}
 
-	/*public List<Exam> getAllExams(Exam exam) {
+	public List<Exam> getAllExams(Exam exam) {
 
 		List<Exam> examList = examDAO.getListOfAllExams(exam);
 		return examList;
-	}*/
+	}
 
 }

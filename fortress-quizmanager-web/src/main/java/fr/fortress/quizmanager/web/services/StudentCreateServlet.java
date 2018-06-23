@@ -41,6 +41,7 @@ public class StudentCreateServlet extends SpringServlet {
 		
 		Student student = new Student();
 		
+		
 		student.setStudentFirstName(request.getParameter("firstName"));
 		student.setStudentLastName(request.getParameter("lastName"));
 		student.setStudentEmail(request.getParameter("studentEmail"));

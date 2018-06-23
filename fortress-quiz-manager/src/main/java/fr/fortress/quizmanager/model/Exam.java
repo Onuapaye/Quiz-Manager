@@ -8,21 +8,32 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name ="Exam", schema = "FORTRESSSCHEMA")
+@Table(name = "Exam", schema = "FORTRESSSCHEMA")
 public class Exam {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="examId")
+	@Column(name = "examId")
 	private int examId;
 
-	@Column(name="examTitle", length = 255, nullable = false)
+	@Column(name = "examTitle", length = 255, nullable = false)
 	String examTitleName;
 
+	@Column(name = "examDescription", length = 255, nullable = true)
+	String examDescription;
+
 	public Exam() {
-		
+
 	}
-	
+
+	public String getExamDescription() {
+		return examDescription;
+	}
+
+	public void setExamDescription(String examDescription) {
+		this.examDescription = examDescription;
+	}
+
 	public int getExamId() {
 		return examId;
 	}
@@ -43,6 +54,7 @@ public class Exam {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((examDescription == null) ? 0 : examDescription.hashCode());
 		result = prime * result + examId;
 		result = prime * result + ((examTitleName == null) ? 0 : examTitleName.hashCode());
 		return result;
@@ -57,6 +69,11 @@ public class Exam {
 		if (getClass() != obj.getClass())
 			return false;
 		Exam other = (Exam) obj;
+		if (examDescription == null) {
+			if (other.examDescription != null)
+				return false;
+		} else if (!examDescription.equals(other.examDescription))
+			return false;
 		if (examId != other.examId)
 			return false;
 		if (examTitleName == null) {
@@ -69,8 +86,8 @@ public class Exam {
 
 	@Override
 	public String toString() {
-		return "Exam [examId=" + examId + ", examTitleName=" + examTitleName + "]";
+		return "Exam [examId=" + examId + ", examTitleName=" + examTitleName + ", examDescription=" + examDescription
+				+ "]";
 	}
-	
-	
+
 }

@@ -178,6 +178,7 @@
 													<td>${studentList.studentEmail}</td>
 													<td>${studentList.studentFirstName}</td>
 													<td>${studentList.studentLastName}</td>
+												
 													<td><span class="right badge badge-primary">
 															<form action="view-student?viewStudent=${studentList.studentEmail}"
 																method="POST">

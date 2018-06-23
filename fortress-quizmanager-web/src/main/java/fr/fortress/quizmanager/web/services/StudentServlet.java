@@ -9,7 +9,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import fr.fortress.quizmanager.model.ApplicationUser;
 import fr.fortress.quizmanager.model.Student;
 import fr.fortress.quizmanager.services.StudentService;
 
