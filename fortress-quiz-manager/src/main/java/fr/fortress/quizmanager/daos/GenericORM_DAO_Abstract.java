@@ -10,8 +10,6 @@ import java.util.List;
 import java.util.Map.Entry;
 
 import javax.inject.Inject;
-import javax.inject.Named;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -30,11 +28,6 @@ public abstract class GenericORM_DAO_Abstract<T> {
 	// Inject the session factory to help call the session methods
 	@Inject
 	SessionFactory sf;
-	
-	@Inject
-	@Named("allUsersQuery")
-	String getAllUsersQuery;
-
 
 	private static final Logger LOGGER = LogManager.getLogger(ApplicationUserDAO.class);
 
@@ -122,7 +115,14 @@ public abstract class GenericORM_DAO_Abstract<T> {
 
 	}
 
-	public List<T> getListOfRecord(T entity) {
+	/**
+	 * A generic method to query all records from a defined database on the bases of the
+	 * object that is passed to it as a parameter
+	 * @param the object that is passed
+	 * @param the query string to be passed and executed
+	 * @return
+	 */
+	public List<T> getListOfRecord(T entity, String queryString) {
 		
 		final Session sessions = sf.openSession();
 		Transaction transactions = null;
@@ -130,7 +130,7 @@ public abstract class GenericORM_DAO_Abstract<T> {
 		try {
 			
 			transactions = sessions.beginTransaction();
-			Query query = sessions.createQuery(getAllUsersQuery); 
+			Query query = sessions.createQuery(queryString); 
 			listOfRecord = query.list();
 
 			transactions.commit();		

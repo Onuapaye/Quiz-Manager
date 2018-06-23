@@ -47,8 +47,8 @@
 			<ul class="navbar-nav ml-auto">
 				<!-- Messages Dropdown Menu -->
 				<li class="nav-item dropdown"><a class="nav-link"
-					data-toggle="dropdown" href="#"> <i class="fa fa-bell-o"></i> <span
-						class="badge badge-danger navbar-badge">3</span>
+					data-toggle="dropdown" href="#"> <i class="fa fa-user"></i> <span
+						class="badge badge-danger navbar-badge">0</span>
 				</a>
 					<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
 						<a href="#" class="dropdown-item"> <!-- Message Start -->
@@ -185,7 +185,7 @@
 													<td><span class="right badge badge-primary">
 															<form action="view-user?viewUser=${userList.userName}"
 																method="POST">
-																<button class="btn btn-sm btn-primary">View</button>
+																</i><button class="btn btn-sm btn-primary">View</button>
 															</form>
 
 													</span> <span class="right badge badge-success">

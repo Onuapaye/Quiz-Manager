@@ -61,13 +61,12 @@ public class ApplicationUserServlet extends SpringServlet {
 				request.setAttribute("userName", lstUser.get(i).getUserName());
 				request.setAttribute("userFullName", lstUser.get(i).getUserFullName());
 				
-				//request.getRequestDispatcher("/WEB-INF/views/update-user.jsp").forward(request, response);
-				response.sendRedirect("update-user");
+				request.getRequestDispatcher("/WEB-INF/views/update-user.jsp").forward(request, response);
 				
-			} else {
+			}/* else {
 
 				response.sendRedirect("users");
-			}
+			}*/
 		}
 	}
 

@@ -64,6 +64,7 @@
 		]]></value></constructor-arg>
 	
 	</bean>
+	
 	<bean id="allUsersQuery" class="java.lang.String">
 		<constructor-arg><value><![CDATA[
 			from ApplicationUser
@@ -82,12 +83,28 @@
 			from Exam
 		]]></value></constructor-arg>
 	</bean>
+	
+	
+	<!-- STUDENT RELATED QUERIES -->
 	<bean id="studentQuery" class="java.lang.String">
+		<constructor-arg><value><![CDATA[
+			from Student as student where student.studentEmail_Id = :studentEmail
+			and student.studentPassword = :studentPassword
+		]]></value></constructor-arg>
+	
+	</bean>
+	<bean id="allStudentQuery" class="java.lang.String">
 		<constructor-arg><value><![CDATA[
 			from Student
 		]]></value></constructor-arg>
 	</bean>
+	
 	<bean id="mcq_answerQuery" class="java.lang.String">
+		<constructor-arg><value><![CDATA[
+			from MCQAnswer as mcqAnswer where mcqAnswer.mcqAnswerId = :mcqanswer_id
+		]]></value></constructor-arg>
+	</bean>
+	<bean id="allMCQAnswerQuery" class="java.lang.String">
 		<constructor-arg><value><![CDATA[
 			from MCQAnswer
 		]]></value></constructor-arg>

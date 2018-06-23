@@ -33,8 +33,7 @@
 				<li class="nav-item"><a class="nav-link" data-widget="pushmenu"
 					href="#"><i class="fa fa-bars"></i></a></li>
 				<li class="nav-item d-none d-sm-inline-block"><a
-					href="dashboard" class="nav-link">Dashboard</a>
-				</li>
+					href="dashboard" class="nav-link">Dashboard</a></li>
 				<li class="nav-item d-none d-sm-inline-block"><a href="#"
 					class="nav-link">Contact</a></li>
 			</ul>
@@ -68,8 +67,8 @@
 		<aside class="main-sidebar sidebar-dark-primary elevation-4"
 			style="min-height: 586px;">
 			<!-- Brand Logo -->
-			<a href="dashboard" class="brand-link">
-				<img src="resources/img/epitalogo128x128.png" alt="Logo"
+			<a href="dashboard" class="brand-link"> <img
+				src="resources/img/epitalogo128x128.png" alt="Logo"
 				class="brand-image img-circle elevation-3" style="opacity: .8">
 				<span class="brand-text font-weight-light">Fortress
 					QuizManager</span>
@@ -99,10 +98,11 @@
 								</p>
 						</a></li> -->
 
-						<li class="nav-item"><a href="students"
-							class="nav-link"> <i class="nav-icon fa fa-th"></i>
+						<li class="nav-item"><a href="students" class="nav-link">
+								<i class="nav-icon fa fa-th"></i>
 								<p>
-									Students <span class="right badge badge-success">Show All</span>
+									Students <span class="right badge badge-success">Show
+										All</span>
 								</p>
 						</a></li>
 
@@ -157,38 +157,39 @@
 									</div>
 								</div>
 
-									<!-- form start -->
-									<form role="form" action="create-user" method="POST">
-										<div class="card-body">
-											<div class="form-group">
-												<label for="firstName">First Name</label> <input
-													type="text" class="form-control" id="firstName"
-													placeholder="Enter first name" name="firstName">
-											</div>
-											<div class="form-group">
-												<label for="lastName">First Name</label> <input
-													type="text" class="form-control" id="lastName"
-													placeholder="Enter last name" name="lastName">
-											</div>
-											<div class="form-group">
-												<label for="studentEmail">Email Address</label> <input
-													type="email" class="form-control" id="studentEmail"
-													placeholder="Enter email" name="studentEmail">
-											</div>
-											<div class="form-group">
-												<label for="studentPassword">Password</label> <input
-													type="password" class="form-control" id="studentPassword"
-													placeholder="Password" name="studentPassword">
-											</div>
+								<!-- form start -->
+								<form role="form" action="create-student" method="POST">
+									<div class="card-body">
+										<div class="form-group">
+											<label for="studentEmail">Email Address</label> <input
+												type="email" class="form-control" id="studentEmail"
+												placeholder="Enter email" name="studentEmail">
 										</div>
-										<!-- /.card-body -->
+										<div class="form-group">
+											<label for="firstName">First Name</label> <input type="text"
+												class="form-control" id="firstName"
+												placeholder="Enter first name" name="firstName">
+										</div>
+										<div class="form-group">
+											<label for="lastName">First Name</label> <input type="text"
+												class="form-control" id="lastName"
+												placeholder="Enter last name" name="lastName">
+										</div>
 
-										<div class="card-footer">
-											<button type="submit" class="btn btn-success">Create
-												Student</button>
-											<a href="users" class="btn btn-default">Cancel</a>	
+										<div class="form-group">
+											<label for="studentPassword">Password</label> <input
+												type="password" class="form-control" id="studentPassword"
+												placeholder="Password" name="studentPassword">
 										</div>
-									</form>
+									</div>
+									<!-- /.card-body -->
+
+									<div class="card-footer">
+										<button type="submit" class="btn btn-success">Create
+											Student</button>
+										<a href="users" class="btn btn-default">Cancel</a>
+									</div>
+								</form>
 
 							</div>
 							<!-- /.card -->

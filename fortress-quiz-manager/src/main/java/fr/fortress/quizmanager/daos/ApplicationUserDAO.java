@@ -20,6 +20,11 @@ public class ApplicationUserDAO extends GenericORM_DAO_Abstract<ApplicationUser>
 	@Inject
 	@Named("userQuery")
 	String queryUser;
+	
+	@Inject
+	@Named("allUsersQuery")
+	String getAllUsersQuery;
+
 
 	private static final Logger LOGGER = LogManager.getLogger(ApplicationUserDAO.class);
 
@@ -62,9 +67,14 @@ public class ApplicationUserDAO extends GenericORM_DAO_Abstract<ApplicationUser>
 		return userList;
 	}
 
+	/**
+	 * Get the list of all Students records from the student table in the database
+	 * @param Accepts the Student object or class as a parameter
+	 * @return Returns a list of the Student class or object
+	 */
 	public List<ApplicationUser> getListOfAllUsers(ApplicationUser applicationUser){
 		
-		List<ApplicationUser> userList = this.getListOfRecord(applicationUser);
+		List<ApplicationUser> userList = this.getListOfRecord(applicationUser, getAllUsersQuery);
 		return userList;
 	}
 	

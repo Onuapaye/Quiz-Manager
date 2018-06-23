@@ -3,7 +3,6 @@ package fr.fortress.quizmanager.services;
 import java.util.List;
 
 import javax.inject.Inject;
-
 import org.springframework.stereotype.Component;
 
 import fr.fortress.quizmanager.daos.StudentDAO;
@@ -14,7 +13,7 @@ public class StudentService {
 
 	@Inject
 	StudentDAO studentDAO;
-
+	
 	public boolean isStudentAuthenticated(String studentEmail) {
 
 		Student student = new Student();
@@ -38,7 +37,6 @@ public class StudentService {
 			}
 		}
 		return result;
-
 	}
 
 	public boolean createStudent(Student student) {
@@ -65,10 +63,10 @@ public class StudentService {
 
 	}
 
-	/*public List<Student> getAllStudents(Student student) {
+	public List<Student> getAllStudents(Student student) {
 
 		List<Student> studentList = studentDAO.getListOfAllStudents(student);
 		return studentList;
-	}*/
+	}
 
 }

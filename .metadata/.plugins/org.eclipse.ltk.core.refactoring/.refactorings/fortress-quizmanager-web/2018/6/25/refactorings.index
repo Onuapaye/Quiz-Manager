@@ -14,3 +14,7 @@
 1529631821098	Delete element
 1529681141892	Rename local variable 'appUser'
 1529711004507	Rename resource 'create-user.jsp'
+1529743937068	Rename type 'StudentCreate'
+1529745531888	Rename type 'UpdateUser'
+1529749436338	Rename local variable 'user'
+1529749491868	Rename local variable 'userUpdated'

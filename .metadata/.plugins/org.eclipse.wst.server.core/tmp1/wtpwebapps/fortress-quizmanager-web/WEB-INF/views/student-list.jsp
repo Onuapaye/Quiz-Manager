@@ -96,7 +96,7 @@
 				<nav class="mt-2">
 					<ul class="nav nav-pills nav-sidebar flex-column"
 						data-widget="treeview" role="menu" data-accordion="false">
-						<li class="nav-item"><a href="create-user" class="nav-link">
+						<li class="nav-item"><a href="create-student" class="nav-link">
 								<i class="nav-icon fa fa-th"></i>
 								<p>
 									Student <span class="right badge badge-danger">Add New</span>
@@ -173,27 +173,27 @@
 											</tr>
 
 											<!-- A LOOP TO GET THE LIST OF ALL USERS -->
-											<fortress:forEach items="${listOfStudents}" var="userList">
+											<fortress:forEach items="${listOfStudents}" var="studentList">
 												<tr>
-													<td>${userList.studentEmail}</td>
-													<td>${userList.studentFirstName}</td>
-													<td>${userList.studentLastName}</td>
+													<td>${studentList.studentEmail}</td>
+													<td>${studentList.studentFirstName}</td>
+													<td>${studentList.studentLastName}</td>
 													<td><span class="right badge badge-primary">
-															<form action="view-user?viewUser=${userList.userName}"
+															<form action="view-student?viewStudent=${studentList.studentEmail}"
 																method="POST">
-																<button class="btn btn-xs btn-primary">View</button>
+																<button class="btn btn-sm btn-primary">View</button>
 															</form>
 
 													</span> <span class="right badge badge-success">
 															<form
-																action="users?updateUser=${userList.userName}"
+																action="students?updateStudent=${studentList.studentEmail}"
 																method="POST">
-																<button class="btn btn-xs btn-success">Update</button>
+																<button class="btn btn-sm btn-success">Update</button>
 															</form>
 
 													</span> <span class="right badge badge-danger">
-															<form action="delete-user?deleteUser=${userList.userName}" method="POST">
-																<button class="btn btn-xs btn-danger">Delete</button>
+															<form action="delete-student?deleteStudent=${studentList.studentEmail}" method="POST">
+																<button class="btn btn-sm btn-danger">Delete</button>
 															</form>
 													</span></td>
 												</tr>

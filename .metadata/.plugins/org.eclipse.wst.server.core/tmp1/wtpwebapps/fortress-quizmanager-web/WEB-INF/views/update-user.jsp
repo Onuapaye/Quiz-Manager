@@ -35,7 +35,7 @@
 				<li class="nav-item"><a class="nav-link" data-widget="pushmenu"
 					href="#"><i class="fa fa-bars"></i></a></li>
 				<li class="nav-item d-none d-sm-inline-block"><a
-					href="resources/lib/admin-lte/index3.html" class="nav-link">Dashboard</a>
+					href="dashboard" class="nav-link">Dashboard</a>
 				</li>
 				<li class="nav-item d-none d-sm-inline-block"><a href="#"
 					class="nav-link">Contact</a></li>
@@ -45,8 +45,8 @@
 			<ul class="navbar-nav ml-auto">
 				<!-- Messages Dropdown Menu -->
 				<li class="nav-item dropdown"><a class="nav-link"
-					data-toggle="dropdown" href="#"> <i class="fa fa-bell-o"></i> <span
-						class="badge badge-danger navbar-badge">3</span>
+					data-toggle="dropdown" href="#"> <i class="fa fa-user"></i> <span
+						class="badge badge-danger navbar-badge">0</span>
 				</a>
 					<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
 						<a href="#" class="dropdown-item"> <!-- Message Start -->
@@ -70,7 +70,7 @@
 		<aside class="main-sidebar sidebar-dark-primary elevation-4"
 			style="min-height: 586px;">
 			<!-- Brand Logo -->
-			<a href="resources/lib/admin-lte/index3.html" class="brand-link">
+			<a href="dashboard" class="brand-link">
 				<img src="resources/img/epitalogo128x128.png" alt="Logo"
 				class="brand-image img-circle elevation-3" style="opacity: .8">
 				<span class="brand-text font-weight-light">Fortress
@@ -160,19 +160,20 @@
 								</div>
 
 									<!-- form start -->
-									<form role="form" action="create-user" method="POST">
+									<form role="form" action="update-user" method="POST">
 										<div class="card-body">
+											<%-- <div class="form-group">
+												<label for="userName">Email Address</label> <input
+													type="email" class="form-control" id="userName"
+													placeholder="Enter email" name="userName" disabled=""
+													value="${userName}">
+											</div> --%>
+											<span><input type="hidden" value="${userName}" name="hiddenUserId"></span>
 											<div class="form-group">
 												<label for="userFullName">Full Name</label> <input
 													type="text" class="form-control" id="userFullName"
 													placeholder="Enter full name" name="userFullName"
 													value="${userFullName}">
-											</div>
-											<div class="form-group">
-												<label for="userName">Email Address</label> <input
-													type="email" class="form-control" id="userName"
-													placeholder="Enter email" name="userName" disabled=""
-													value="${userName}">
 											</div>
 											<div class="form-group">
 												<label for="Password">Password</label> <input

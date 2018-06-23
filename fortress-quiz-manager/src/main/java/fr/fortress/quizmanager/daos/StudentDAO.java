@@ -21,6 +21,10 @@ public class StudentDAO extends GenericORM_DAO_Abstract<Student> {
 	@Inject
 	@Named("studentQuery")
 	String queryStudent;
+	
+	@Inject
+	@Named("allStudentQuery")
+	String getAllStudentsQuery;
 
 	private static final Logger LOGGER = LogManager.getLogger(StudentDAO.class);
 
@@ -63,11 +67,11 @@ public class StudentDAO extends GenericORM_DAO_Abstract<Student> {
 		return studentList;
 	}
 
-	/*public List<Student> getListOfAllStudents(Student student){
+	public List<Student> getListOfAllStudents(Student student){
 		
-		List<Student> studentList = this.getListOfRecord(student);
+		List<Student> studentList = this.getListOfRecord(student, getAllStudentsQuery);
 		return studentList;
-	}*/
+	}
 	
 	@SuppressWarnings("rawtypes")
 	@Override

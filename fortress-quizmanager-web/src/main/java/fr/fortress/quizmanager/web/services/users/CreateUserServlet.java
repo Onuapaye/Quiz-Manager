@@ -38,7 +38,7 @@ public class CreateUserServlet extends SpringServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.getRequestDispatcher("/WEB-INF/views/createuser.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/views/create-user.jsp").forward(request, response);
 	}
 
 	/**
@@ -56,7 +56,7 @@ public class CreateUserServlet extends SpringServlet {
 			response.sendRedirect("users");
 		}else {
 			request.setAttribute("errorMessage", "Invalid Username or Password entered.");
-			request.getRequestDispatcher("/WEB-INF/views/dash-board.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/views/create-user.jsp").forward(request, response);
 		}
 
 	}
