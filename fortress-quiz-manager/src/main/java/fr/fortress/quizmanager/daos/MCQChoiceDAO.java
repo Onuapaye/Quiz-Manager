@@ -7,14 +7,14 @@ import org.springframework.stereotype.Repository;
 //import fr.epita.quiz.services.GenericORMDao;
 //import fr.epita.quiz.services.WhereClauseBuilder;
 import fr.fortress.quizmanager.model.MCQChoice;
-import fr.fortress.quizmanager.services.WhereClauseBuilder;
+import fr.fortress.quizmanager.services.SQLWhereClauseBuilder;
 
 @Repository
 public class MCQChoiceDAO extends GenericORM_DAO_Abstract<MCQChoice> {
 
 	@Override
-	protected WhereClauseBuilder<MCQChoice> getWhereClauseBuilder(MCQChoice entity) {
-		final WhereClauseBuilder<MCQChoice> whereClauseBuilder = new WhereClauseBuilder<>();
+	protected SQLWhereClauseBuilder<MCQChoice> getWhereClauseBuilder(MCQChoice entity) {
+		final SQLWhereClauseBuilder<MCQChoice> whereClauseBuilder = new SQLWhereClauseBuilder<>();
 		whereClauseBuilder.setParameters(new LinkedHashMap<>());
 
 		// TODO : load from configuration

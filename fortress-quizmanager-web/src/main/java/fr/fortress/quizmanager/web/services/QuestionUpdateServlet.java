@@ -1,6 +1,7 @@
 package fr.fortress.quizmanager.web.services;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -8,8 +9,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import fr.fortress.quizmanager.model.Exam;
 import fr.fortress.quizmanager.model.Question;
 import fr.fortress.quizmanager.model.QuestionType;
+import fr.fortress.quizmanager.services.ExamService;
 import fr.fortress.quizmanager.services.QuestionService;
 
 /**
@@ -21,7 +24,9 @@ public class QuestionUpdateServlet extends SpringServlet {
 
 	@Inject
 	QuestionService questionService;
-
+	
+	@Inject
+	ExamService examService;
 	/**
 	 * Default constructor.
 	 */
@@ -65,11 +70,25 @@ public class QuestionUpdateServlet extends SpringServlet {
 			break;
 		}
 
+		Exam exam = new Exam();
+		List<Exam> examList = examService.getAllExams(exam);
+		
+		//get exam id from list
+		//int exam_id = 0;
+		final int size = examList.size();
+		for (int i = 0; i < size; i++) {
+			if (examList.get(i).getExamTitleName().equals(request.getParameter("examId"))) {
+				exam.setExamId(examList.get(i).getExamId());
+				exam.setExamTitleName(examList.get(i).getExamTitleName());
+				exam.setExamDescription(examList.get(i).getExamDescription());
+			}
+		}
+		
 		question.setQuestionId(Integer.parseInt(request.getParameter("hiddenQuestionId")));
 		question.setQuestionTitle(request.getParameter("questionTitle"));
 		question.setQuestionInstruction(request.getParameter("questionInstruction"));
 		question.setQuestionType(questionType);
-		question.setExamId(Integer.parseInt(request.getParameter("examId")));
+		question.setExamInQuestion(exam);//.setExamId(Integer.parseInt(request.getParameter("examId")));
 
 		boolean questionUpdated = questionService.updateQuestion(question);
 		if (questionUpdated == true) {

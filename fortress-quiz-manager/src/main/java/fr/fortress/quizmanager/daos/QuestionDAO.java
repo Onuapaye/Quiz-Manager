@@ -12,7 +12,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Repository;
 
 import fr.fortress.quizmanager.model.Question;
-import fr.fortress.quizmanager.services.WhereClauseBuilder;;
+import fr.fortress.quizmanager.services.SQLWhereClauseBuilder;;
 
 @Repository
 public class QuestionDAO extends GenericORM_DAO_Abstract<Question>  {
@@ -68,9 +68,9 @@ public class QuestionDAO extends GenericORM_DAO_Abstract<Question>  {
 	
 	
 	@Override
-	protected WhereClauseBuilder<Question> getWhereClauseBuilder(Question entity) {
+	protected SQLWhereClauseBuilder<Question> getWhereClauseBuilder(Question entity) {
 		
-		final WhereClauseBuilder<Question> wcb = new WhereClauseBuilder<>();
+		final SQLWhereClauseBuilder<Question> wcb = new SQLWhereClauseBuilder<>();
 		wcb.setQueryString(queryQuestions);
 
 		// TODO as bonus : let the whereclausebuilder generate this map thanks to introspection
@@ -78,7 +78,7 @@ public class QuestionDAO extends GenericORM_DAO_Abstract<Question>  {
 		parameters.put("questionId", entity.getQuestionId());
 		parameters.put("questionType", entity.getQuestionType());
 		parameters.put("questionTitle", entity.getQuestionTitle());
-		parameters.put("examId", entity.getExamId());
+		parameters.put("examId", entity.getExamInQuestion());
 		wcb.setParameters(parameters);
 		return wcb;
 	}

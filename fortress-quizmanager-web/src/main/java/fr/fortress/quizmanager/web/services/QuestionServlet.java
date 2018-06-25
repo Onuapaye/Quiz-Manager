@@ -62,7 +62,7 @@ public class QuestionServlet extends SpringServlet {
 				request.setAttribute("questionTitle", lstQuestions.get(i).getQuestionTitle());
 				request.setAttribute("questionInstruction", lstQuestions.get(i).getQuestionInstruction());
 				request.setAttribute("questionType", lstQuestions.get(i).getQuestionType());
-				request.setAttribute("examId", lstQuestions.get(i).getExamId());
+				request.setAttribute("examId", lstQuestions.get(i).getExamInQuestion().getExamId());
 				
 				request.getRequestDispatcher("/WEB-INF/views/update-question.jsp").forward(request, response);
 

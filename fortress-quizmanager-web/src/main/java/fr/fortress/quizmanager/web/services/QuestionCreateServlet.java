@@ -50,7 +50,7 @@ public class QuestionCreateServlet extends SpringServlet {
 		
 		Exam exam = new Exam();
 		
-		request.setAttribute("listOfExams", examService.getAllExams(exam));
+		request.setAttribute("listOfExamsType", examService.getAllExams(exam));
 		request.setAttribute("listOfQuestionTypes", questionType);
 		request.getRequestDispatcher("/WEB-INF/views/create-question.jsp").forward(request, response);
 	}
@@ -65,7 +65,8 @@ public class QuestionCreateServlet extends SpringServlet {
 		Question question = new Question();
 		QuestionType questionType = null;
 		
-		String parameterValue = request.getParameter("questionDescription");
+		//select the question type based on what will be passed by the parameter
+		String parameterValue = request.getParameter("questionType");
 				
 		switch (parameterValue) {
 		case "Associative":
@@ -81,10 +82,24 @@ public class QuestionCreateServlet extends SpringServlet {
 			break;
 		}
 		
+		Exam exam = new Exam();
+		List<Exam> examList = examService.getAllExams(exam);
+		
+		//get exam id from list
+		//int exam_id = 0;
+		final int size = examList.size();
+		for (int i = 0; i < size; i++) {
+			if (examList.get(i).getExamTitleName().equals(request.getParameter("examId"))) {
+				exam.setExamId(examList.get(i).getExamId());
+				exam.setExamTitleName(examList.get(i).getExamTitleName());
+				exam.setExamDescription(examList.get(i).getExamDescription());
+			}
+		}
+				
 		question.setQuestionTitle(request.getParameter("questionTitle"));
 		question.setQuestionType(questionType);
 		question.setQuestionInstruction(request.getParameter("questionInstruction"));
-		question.setExamId(Integer.parseInt(request.getParameter("examId")));
+		question.setExamInQuestion(exam);
 	
 		boolean questionCreated = questionService.createQuestion(question);
 		if (questionCreated == true) {

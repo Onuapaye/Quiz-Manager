@@ -22,3 +22,6 @@
 1529702407437	Rename type 'MCQAnswer'
 1529776091950	Rename field 'id'
 1529776114055	Rename field 'question'
+1529824161953	Rename local variable 'userList'
+1529826401349	Rename method 'getByExamId'
+1529873327815	Rename type 'WhereClauseBuilder'

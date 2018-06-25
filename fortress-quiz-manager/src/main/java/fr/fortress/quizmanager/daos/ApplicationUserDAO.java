@@ -12,7 +12,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Repository;
 
 import fr.fortress.quizmanager.model.ApplicationUser;
-import fr.fortress.quizmanager.services.WhereClauseBuilder;
+import fr.fortress.quizmanager.services.SQLWhereClauseBuilder;
 
 @Repository
 public class ApplicationUserDAO extends GenericORM_DAO_Abstract<ApplicationUser> {
@@ -80,9 +80,9 @@ public class ApplicationUserDAO extends GenericORM_DAO_Abstract<ApplicationUser>
 	
 	@SuppressWarnings("rawtypes")
 	@Override
-	protected WhereClauseBuilder getWhereClauseBuilder(ApplicationUser entity) {
+	protected SQLWhereClauseBuilder getWhereClauseBuilder(ApplicationUser entity) {
 
-		final WhereClauseBuilder<ApplicationUser> wcb = new WhereClauseBuilder<>();
+		final SQLWhereClauseBuilder<ApplicationUser> wcb = new SQLWhereClauseBuilder<>();
 		wcb.setQueryString(queryUser);
 
 		try {

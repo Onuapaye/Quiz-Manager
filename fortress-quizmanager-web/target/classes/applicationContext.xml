@@ -14,7 +14,7 @@
 	<!-- THIS IS FOR DERBY DATABASE CONNECTIONS -->
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="org.apache.derby.jdbc.ClientDriver" />
-		<property name="url" value="jdbc:derby://localhost:1527/fortressquizdb;create=true;" />
+		<property name="url" value="jdbc:derby://localhost:1527/quiz-fortressdb;create=true;" />
 		<property name="username" value="root" />
 		<property name="password" value="wamp64" />
 	</bean>
@@ -93,11 +93,11 @@
 			from Exam
 		]]></value></constructor-arg>
 	</bean>
-	<!-- <bean id="allExamsQuery" class="java.lang.String">
+	<bean id="examByNameQuery" class="java.lang.String">
 		<constructor-arg><value><![CDATA[
-			from Exam
+			from Exam as exam where exam.ExamTitleName = :examTitleName
 		]]></value></constructor-arg>
-	</bean> -->
+	</bean>
 	
 	
 	<!-- STUDENT RELATED QUERIES -->

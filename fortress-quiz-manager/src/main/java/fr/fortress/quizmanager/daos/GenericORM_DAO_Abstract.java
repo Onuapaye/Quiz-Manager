@@ -16,7 +16,7 @@ import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import org.springframework.stereotype.Repository;
 
-import fr.fortress.quizmanager.services.WhereClauseBuilder;
+import fr.fortress.quizmanager.services.SQLWhereClauseBuilder;
 
 /**
  * @author Mr Kasapa
@@ -42,7 +42,6 @@ public abstract class GenericORM_DAO_Abstract<T> {
 		if (!beforeCreate(entity)) {
 			return;
 		}
-
 		
 		Transaction transactions = null;
 		try {
@@ -55,7 +54,7 @@ public abstract class GenericORM_DAO_Abstract<T> {
 			transactions.commit();
 
 		} catch (Exception e) {
-			transactions.rollback();
+			//transactions.rollback();
 
 			LOGGER.error("Error creating application user record with error message: " + e.getMessage().toString());
 		}
@@ -107,7 +106,6 @@ public abstract class GenericORM_DAO_Abstract<T> {
 
 		} catch (Exception e) {
 			transactions.rollback();
-			this.closeSession();
 
 			LOGGER.error("Error deleting application user record with error message: " + e.getMessage().toString());
 		}
@@ -121,6 +119,7 @@ public abstract class GenericORM_DAO_Abstract<T> {
 	 * @param the query string to be passed and executed
 	 * @return
 	 */
+	
 	public List<T> getListOfRecord(T entity, String queryString) {
 		
 		final Session sessions = sf.openSession();
@@ -132,25 +131,18 @@ public abstract class GenericORM_DAO_Abstract<T> {
 			Query query = sessions.createQuery(queryString); 
 			listOfRecord = query.list();
 
-			transactions.commit();		
+			transactions.commit();
 		} catch (Exception e) {
 
 			transactions.rollback();
-			//this.closeSession();
 			
 			listOfRecord = null;
 		}
 				
 		return listOfRecord;
 	}
-	/**
-	 * A method to close the session factory after it has been called or used
-	 */
-	public final void closeSession() {
-		if (sf.isOpen()) {
-			sf.close();
-		}
-	}
+	
+	
 
 	/**
 	 * A generic method to query or search for records. It accepts as a parameter,
@@ -163,7 +155,7 @@ public abstract class GenericORM_DAO_Abstract<T> {
 
 		final Session session = sf.openSession();
 
-		final WhereClauseBuilder<T> wcb = getWhereClauseBuilder(entity);
+		final SQLWhereClauseBuilder<T> wcb = getWhereClauseBuilder(entity);
 
 		final Query searchQuery = session.createQuery(wcb.getQueryString());
 
@@ -174,7 +166,7 @@ public abstract class GenericORM_DAO_Abstract<T> {
 		return searchQuery.list();
 	}
 
-	protected abstract WhereClauseBuilder getWhereClauseBuilder(T entity);
+	protected abstract SQLWhereClauseBuilder getWhereClauseBuilder(T entity);
 
 	public boolean beforeCreate(T entity) {
 		return entity != null;

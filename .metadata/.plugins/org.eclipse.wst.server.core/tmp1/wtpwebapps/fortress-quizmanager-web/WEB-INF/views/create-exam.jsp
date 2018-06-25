@@ -161,9 +161,9 @@
 									<div class="card-body">
 
 										<div class="form-group">
-											<label for="examTitle">Exam Title</label> <input type="text"
-												class="form-control" id="firstName"
-												placeholder="Enter first name" name="examTitle">
+											<label for="examTitleName">Exam Title</label> <input type="text"
+												class="form-control" id="examTitleName"
+												placeholder="Enter first name" name="examTitleName">
 										</div>
 										<div class="form-group">
 											<label for="examDescription">Exam Description</label>

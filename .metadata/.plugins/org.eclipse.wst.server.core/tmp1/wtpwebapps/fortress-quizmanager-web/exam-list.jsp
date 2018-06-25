@@ -173,7 +173,7 @@
 											</tr>
 
 											<!-- A LOOP TO GET THE LIST OF ALL USERS -->
-											<fortress:forEach items="${listOfExams}" var="examList">
+											<fortress:forEach items="${createListOfExams}" var="examList">
 												<tr>
 													<td>${examList.examId}</td>
 													<td>${examList.examTitleName}</td>

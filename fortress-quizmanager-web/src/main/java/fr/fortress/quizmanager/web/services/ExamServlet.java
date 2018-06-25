@@ -35,9 +35,10 @@ public class ExamServlet extends SpringServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		Exam exam = new Exam();
 
-		request.setAttribute("listOfExams", examService.getAllExams(exam));
+		request.setAttribute("createListOfExams", examService.getAllExams(exam));
 		request.getRequestDispatcher("/WEB-INF/views/exam-list.jsp").forward(request, response);
 	}
 

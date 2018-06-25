@@ -14,8 +14,6 @@
 <fullyQualifiedTypeName name="fr.fortress.quizmanager.services.GenericORM_DAO_Abstract"/>
 <fullyQualifiedTypeName name="javax.persistence.Column"/>
 <fullyQualifiedTypeName name="javax.persistence.Table"/>
-<fullyQualifiedTypeName name="javax.persistence.ManyToOne"/>
-<fullyQualifiedTypeName name="javax.persistence.JoinColumn"/>
 <fullyQualifiedTypeName name="fr.fortress.quizmanager.login.services.LoginService"/>
 <fullyQualifiedTypeName name="javax.servlet.ServletConfig"/>
 <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
@@ -40,5 +38,9 @@
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="fr.fortress.quizmanager.services.ExamService"/>
+<fullyQualifiedTypeName name="fr.fortress.quizmanager.daos.ExamDAO"/>
 <fullyQualifiedTypeName name="fr.fortress.quizmanager.model.Exam"/>
+<fullyQualifiedTypeName name="fr.fortress.quizmanager.services.WhereClauseBuilder"/>
+<fullyQualifiedTypeName name="javax.persistence.JoinColumn"/>
+<fullyQualifiedTypeName name="javax.persistence.ManyToOne"/>
 </qualifiedTypeNameHistroy>

@@ -28,8 +28,9 @@ public class QuestionService {
 
 	public boolean createQuestion(Question question) {
 
-		if (question.getQuestionTitle().equals(null) || question.getQuestionTitle().equals("") || question.getExamId() <= 0
-				|| question.getQuestionType().equals(null) || question.getQuestionTitle().equals("")) {
+		if (question.getQuestionTitle().equals(null) || question.getQuestionTitle().equals("")
+				|| question.getExamInQuestion().getExamId() <= 0 || question.getQuestionType().equals(null)
+				|| question.getQuestionTitle().equals("")) {
 
 			return false;
 		} else {
@@ -41,7 +42,7 @@ public class QuestionService {
 
 	public boolean updateQuestion(Question question) {
 
-		if (question.getQuestionTitle().equals("") || question.getExamId() <= 0 ) {
+		if (question.getQuestionTitle().equals("") || question.getExamInQuestion().getExamId() <= 0) {
 
 			return false;
 		} else {

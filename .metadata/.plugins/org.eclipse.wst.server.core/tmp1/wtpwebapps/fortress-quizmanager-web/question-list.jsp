@@ -168,7 +168,7 @@
 												<!-- <th>Serial #</th> -->
 												<th>#</th>
 												<th>Question</th>
-												<th>Instruction</th>
+<!-- 												<th>Instruction</th> -->
 												<th>Exam Type</th>
 												<th>Type</th>
 											</tr>
@@ -179,14 +179,13 @@
 												<tr>
 													<td>${questionList.questionId}</td>
 													<td>${questionList.questionTitle}</td>
-													<td>${questionList.questionInstruction}</td>
-													<td>${questionList.examId}</td>
+													<td>${questionList.examInQuestion.examTitleName}</td>
 													<td>${questionList.questionType}</td>
 													<td><span class="right badge badge-primary">
 															<form
-																action="view-student?viewQuestion=${questionList.questionId}"
+																action="view-student?questionId=${questionList.questionId}?examId=${questionList.examInQuestion.examId}"
 																method="POST">
-																<button class="btn btn-sm btn-primary">View</button>
+																<button class="btn btn-sm btn-primary">Options</button>
 															</form>
 
 													</span> <span class="right badge badge-success">
@@ -214,10 +213,11 @@
 							<!-- /.card -->
 						</div>
 					</div>
-
+</div>
 				</div>
 			</section>
 			<!-- /.content -->
+			
 		</div>
 		<!-- /.content-wrapper -->
 		<footer class="main-footer">

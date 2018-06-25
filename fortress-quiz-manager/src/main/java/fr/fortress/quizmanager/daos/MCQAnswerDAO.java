@@ -12,7 +12,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Repository;
 
 import fr.fortress.quizmanager.model.MCQAnswer;
-import fr.fortress.quizmanager.services.WhereClauseBuilder;
+import fr.fortress.quizmanager.services.SQLWhereClauseBuilder;
 
 @Repository
 public class MCQAnswerDAO extends GenericORM_DAO_Abstract<MCQAnswer> {
@@ -74,9 +74,9 @@ public class MCQAnswerDAO extends GenericORM_DAO_Abstract<MCQAnswer> {
 	
 	@SuppressWarnings("rawtypes")
 	@Override
-	protected WhereClauseBuilder getWhereClauseBuilder(MCQAnswer entity) {
+	protected SQLWhereClauseBuilder getWhereClauseBuilder(MCQAnswer entity) {
 
-		final WhereClauseBuilder<MCQAnswer> wcb = new WhereClauseBuilder<>();
+		final SQLWhereClauseBuilder<MCQAnswer> wcb = new SQLWhereClauseBuilder<>();
 		wcb.setQueryString(queryMCQ_Answer);
 
 		try {

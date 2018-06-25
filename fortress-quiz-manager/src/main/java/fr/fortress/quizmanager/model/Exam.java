@@ -16,7 +16,7 @@ public class Exam {
 	@Column(name = "examId")
 	private int examId;
 
-	@Column(name = "examTitleName", length = 255, nullable = false)
+	@Column(name = "examTitleName", length = 255, nullable = false, unique = true)
 	String examTitleName;
 
 	@Column(name = "examDescription", length = 255, nullable = true)

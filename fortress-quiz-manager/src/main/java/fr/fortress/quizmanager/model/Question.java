@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -21,8 +23,9 @@ public class Question {
 	@Column(name = "questionType", nullable = false, columnDefinition="VARCHAR(45)")
 	private QuestionType questionType;
 	
-	@Column(name = "examId", nullable = false, columnDefinition="INT()")
-	private int examId;
+	@ManyToOne
+	@JoinColumn(nullable = false)
+	private Exam examInQuestion;
 	
 	@Column(name = "questionInstruction", nullable = true, columnDefinition="VARCHAR(255)")
 	private String questionInstruction;
@@ -55,15 +58,6 @@ public class Question {
 	public void setQuestionType(QuestionType questionType) {
 		this.questionType = questionType;
 	}
-
-	public int getExamId() {
-		return examId;
-	}
-
-	public void setExamId(int examId) {
-		this.examId = examId;
-	}
-
 	
 	public String getQuestionInstruction() {
 		return questionInstruction;
@@ -73,11 +67,19 @@ public class Question {
 		this.questionInstruction = questionInstruction;
 	}
 
+	public Exam getExamInQuestion() {
+		return examInQuestion;
+	}
+
+	public void setExamInQuestion(Exam examInQuestion) {
+		this.examInQuestion = examInQuestion;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + examId;
+		result = prime * result + ((examInQuestion == null) ? 0 : examInQuestion.hashCode());
 		result = prime * result + ((questionId == null) ? 0 : questionId.hashCode());
 		result = prime * result + ((questionInstruction == null) ? 0 : questionInstruction.hashCode());
 		result = prime * result + ((questionTitle == null) ? 0 : questionTitle.hashCode());
@@ -94,7 +96,10 @@ public class Question {
 		if (getClass() != obj.getClass())
 			return false;
 		Question other = (Question) obj;
-		if (examId != other.examId)
+		if (examInQuestion == null) {
+			if (other.examInQuestion != null)
+				return false;
+		} else if (!examInQuestion.equals(other.examInQuestion))
 			return false;
 		if (questionId == null) {
 			if (other.questionId != null)
@@ -119,7 +124,8 @@ public class Question {
 	@Override
 	public String toString() {
 		return "Question [questionId=" + questionId + ", questionTitle=" + questionTitle + ", questionType="
-				+ questionType + ", examId=" + examId + ", questionInstruction=" + questionInstruction + "]";
+				+ questionType + ", examInQuestion=" + examInQuestion + ", questionInstruction=" + questionInstruction
+				+ "]";
 	}
 	
 }

@@ -180,8 +180,8 @@
 										<div class="form-group">
 											<label for="examId"></label>Exam Type<select class="form-control"
 												name="examId">
-												<fortress:forEach items="${listOfExams}" var="xType">
-													<option>${listOfExams}</option>
+												<fortress:forEach items="${listOfExamsType}" var="xType">
+													<option>${xType.examTitleName}</option>
 												</fortress:forEach>
 											</select>
 										</div>
