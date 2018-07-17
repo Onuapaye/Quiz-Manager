@@ -202,6 +202,7 @@
 	</dependencies>
 
 	<distributionManagement>
+	
 		<repository>
 			<id>releases</id>
 			<url>http://nexus:8081/nexus/content/repositories/releases</url>
