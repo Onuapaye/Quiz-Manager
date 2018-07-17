@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <servers>
-  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers2/Quiz-Tomcat-x64-config" deployDir="wtpwebapps" hostname="localhost" id="Quiz-Tomcat-x64" name="Quiz-Tomcat-x64" runtime-id="Quiz-Tomcat-x64" server-type="org.eclipse.jst.server.tomcat.90" server-type-id="org.eclipse.jst.server.tomcat.90" start-timeout="2000" stop-timeout="15" testEnvironment="false" timestamp="11">
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers2/Quiz-Tomcat-x64-config" deployDir="wtpwebapps" hostname="localhost" id="Quiz-Tomcat-x64" name="Quiz-Tomcat-x64" runtime-id="Quiz-Tomcat-x64" server-type="org.eclipse.jst.server.tomcat.90" server-type-id="org.eclipse.jst.server.tomcat.90" start-timeout="2000" stop-timeout="15" testEnvironment="false" timestamp="15">
     <list key="modules" value0="fortress-quizmanager-web::org.eclipse.jst.jee.server:fortress-quizmanager-web::jst.web::3.0"/>
   </server>
 </servers>

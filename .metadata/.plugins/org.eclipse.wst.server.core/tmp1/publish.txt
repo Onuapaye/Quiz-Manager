@@ -1,5 +1,5 @@
 #Tomcat publish data
-#Tue Jul 17 18:24:07 CEST 2018
+#Tue Jul 17 19:35:02 CEST 2018
 org.eclipse.jst.j2ee.server\:fortress-quiz-manager=C\:\\tomcat9x64\\wtpwebapps\\fortress-quizmanager-web\\WEB-INF\\lib\\fortress-quiz-manager-0.0.1-SNAPSHOT.jar
 org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\Mr\ Kasapa\\.m2\\repository\\org\\springframework\\spring-web\\5.0.4.RELEASE\\spring-web-5.0.4.RELEASE.jar=C\:\\tomcat9x64\\wtpwebapps\\fortress-quizmanager-web\\WEB-INF\\lib\\spring-web-5.0.4.RELEASE.jar
 org.eclipse.jst.jee.server\:fortress-quizmanager-web=C\:\\tomcat9x64\\wtpwebapps\\fortress-quizmanager-web
