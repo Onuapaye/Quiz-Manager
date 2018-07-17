@@ -13007,3 +13007,31 @@ Caused by: java.io.EOFException: input contained no data
 2018-07-17 20:09:56,822 [Worker-77] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
 2018-07-17 20:09:56,843 [Worker-77] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2018-07-17 20:09:56,845 [Worker-77] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-07-17 20:45:24,085 [Worker-89] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-07-17 20:45:24,085 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-07-17 20:45:24,088 [Worker-89] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-07-17 20:45:24,090 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2018-07-17 20:45:50,757 [Worker-77] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2018-07-17 20:45:51,790 [Worker-77] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: fr.fortress.quiz-manager:fortress-quiz-manager:0.0.1-SNAPSHOT @ C:\Users\Mr Kasapa\eclipse-workspace\fortress-quiz-manager\pom.xml.
+2018-07-17 20:45:52,668 [Worker-77] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: fr.fortress.quizmanager.web:fortress-quizmanager-web:0.0.1-SNAPSHOT @ C:\Users\Mr Kasapa\eclipse-workspace\fortress-quizmanager-web\pom.xml.
+2018-07-17 20:45:54,630 [Worker-77] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /fortress-quiz-manager/src/main/java
+2018-07-17 20:45:54,630 [Worker-77] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /fortress-quiz-manager/src/main/resources
+2018-07-17 20:45:54,632 [Worker-77] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /fortress-quiz-manager/src/test/java
+2018-07-17 20:45:54,632 [Worker-77] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /fortress-quiz-manager/src/test/resources
+2018-07-17 20:45:55,100 [Worker-77] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /fortress-quizmanager-web/src/main/java
+2018-07-17 20:45:55,100 [Worker-77] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /fortress-quizmanager-web/src/main/resources
+2018-07-17 20:45:55,100 [Worker-77] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /fortress-quizmanager-web/src/test/java
+2018-07-17 20:45:55,100 [Worker-77] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /fortress-quizmanager-web/src/test/resources
+2018-07-17 20:45:56,680 [Worker-77] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for fortress-quizmanager-web
+2018-07-17 20:45:56,714 [Worker-77] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 5 sec
+2018-07-17 20:45:58,327 [Worker-86] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-07-17 20:45:58,329 [Worker-86] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-07-17 20:45:58,332 [Worker-86] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-07-17 20:45:58,334 [Worker-86] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2018-07-17 20:46:00,341 [Worker-91] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-07-17 20:46:00,343 [Worker-91] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2018-07-17 20:46:00,380 [Worker-91] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-07-17 20:46:00,383 [Worker-91] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-07-17 20:46:00,385 [Worker-91] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of fortress-quizmanager-web
+2018-07-17 20:46:00,385 [Worker-91] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for fortress-quizmanager-web
+2018-07-17 20:46:00,389 [Worker-91] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
