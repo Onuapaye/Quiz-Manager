@@ -11,6 +11,6 @@
 <booleanAttribute key="org.eclipse.jdt.launching.DEFAULT_CLASSPATH" value="false"/>
 <stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.8.0_51"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="start"/>
-<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dcatalina.base=&quot;C:\Users\Mr Kasapa\eclipse-workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1&quot; -Dcatalina.home=&quot;C:\tomcat9x64&quot; -Dwtp.deploy=&quot;C:\Users\Mr Kasapa\eclipse-workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps&quot; -Djava.endorsed.dirs=&quot;C:\tomcat9x64\endorsed&quot;"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dcatalina.base=&quot;C:\tomcat9x64&quot; -Dcatalina.home=&quot;C:\tomcat9x64&quot; -Dwtp.deploy=&quot;C:\tomcat9x64\wtpwebapps&quot; -Djava.endorsed.dirs=&quot;C:\tomcat9x64\endorsed&quot;"/>
 <stringAttribute key="server-id" value="Quiz-Tomcat-x64"/>
 </launchConfiguration>

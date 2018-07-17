@@ -1,6 +1,0 @@
-package fr.fortress.quizmanager.services;
-
-@Component
-public class MCQAnswerService {
-
-}

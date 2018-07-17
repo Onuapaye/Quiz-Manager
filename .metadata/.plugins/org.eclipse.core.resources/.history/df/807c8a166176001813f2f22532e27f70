@@ -1,9 +1,0 @@
-package fr.fortress.quizmanager.services;
-
-import org.springframework.stereotype.Component;
-
-@Component
-public class AnswerService {
-
-	
-}

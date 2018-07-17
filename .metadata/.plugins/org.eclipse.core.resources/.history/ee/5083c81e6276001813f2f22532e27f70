@@ -1,6 +1,0 @@
-package fr.fortress.quizmanager.daos;
-
-@Repository
-public class MCQAnswerDAO extends GenericORM_DAO_Abstract<T> {
-
-}

@@ -1,7 +1,0 @@
-package fr.fortress.quizmanager.model;
-
-public enum QuestionType {
-	OPEN = 1 
-	ASSOCIATIVE = 2 
-	MCQ = 3
-}
